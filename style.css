@@ -1,0 +1,74 @@
+body { { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }}
+
+
+header {
+  background-color: rgb(71, 116, 88) !important;
+}
+
+.hero {
+  padding: 30px;
+}
+#instruments .row {
+  display: flex;
+  justify-content: space-between; /* Distribute cards evenly */
+}
+
+#instruments .col-md-4 {
+  display: flex;
+  flex-direction: column; /* Ensure vertical stretching */
+  padding: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column; /* Ensures the card content stretches to fill space */
+  height: 100%; /* Ensure each card takes up full height */
+  background-color: #f8f9fa; /* Optional: Adjust the background color of the card */
+}
+
+/* Ensure uniform image size */
+.card-img-top {
+  width: 100%; /* Make image fill the card width */
+  height: 300px; /* Set a fixed height for all images */
+  object-fit: cover; /* Ensures the image is cropped and covers the area without stretching */
+}
+
+/* Ensure the card body takes up remaining space */
+.card-body {
+  flex-grow: 1; /* Ensures the card body fills the rest of the card height */
+}
+
+/* Optional: Style for consistency */
+.card-title {
+  margin-bottom: 0.5rem; /* Space between title and text */
+}
+
+/* Positioning the dropdown under the Instruments link */
+.dropdown-menu-container {
+  display: none; /* Initially hidden */
+  position: absolute;
+  top: 60px; /* Adjust this depending on your navbar height */
+  left: 0;
+  z-index: 999; /* Make sure it's above other content */
+  background-color: #343a40; /* Match the navbar background */
+  width: 100%;
+}
+
+
+.nav-item:hover .dropdown-menu-container {
+  display: block;
+}
+
+.dropdown-menu-container ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.dropdown-item {
+  color: black;
+}
+
+.dropdown-item:hover {
+  background-color: #495057;
+}
