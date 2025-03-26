@@ -25,19 +25,15 @@
                       <a class="nav-link" href="#">Home</a>
                   </li>
                   <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
                           Instruments
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="#">Guitars</a></li>
-                          <li><a class="dropdown-item" href="#">Piano</a></li>
-                          <li><a class="dropdown-item" href="#">Drums & Percussion</a></li>
-                          <li><a class="dropdown-item" href="#">Violin</a></li>
-                          <li><a class="dropdown-item" href="#">Saxophone</a></li>
-                          <li><a class="dropdown-item" href="#">Flute</a></li>
-                          <li><a class="dropdown-item" href="#">Synthesizers</a></li>
-                          <li><a class="dropdown-item" href="#">Recording Equipment</a></li>
-                          <li><a class="dropdown-item" href="#">DJ Equipment</a></li>
+                          <li><a class="dropdown-item" href="images/Instruments/guitars.html">Guitars</a></li>
+                          <li><a class="dropdown-item" href="images/Instruments/guitars.html">Piano</a></li>
+                          <li><a class="dropdown-item" href="images/Instruments/drums.html">Drums & Percussion</a></li>
+                          <li><a class="dropdown-item" href="images/Instruments/synthesisers.html">Synthesizers</a></li>
+                          <li><a class="dropdown-item" href="images/Instruments/synthesisers.html">Recording Equipment</a></li>
                       </ul>
                   </li>
                   <li class="nav-item">
@@ -47,19 +43,40 @@
                       <a class="nav-link" href="/login.html">Login</a>
                   </li>
               </ul>
+              <!-- Search Form -->
+              <form class="d-flex ms-3" onsubmit="searchFunction()">
+                  <input class="form-control me-2" type="search" placeholder="Search" id="searchInput">
+                  <button class="btn btn-outline-light" type="submit">Search</button>
+
+                  <script>
+                    function searchFunction() {
+                      var x = document.getElementById("searchInput").value;
+
+                      if (x === "guitar"){
+                        window.open
+                      }
+                    }
+
+                  </script>
+              </form>
           </div>
       </div>
-    </nav>
+  </nav>
+  
 
   <header class="text-white text-center py-5">
       <h1 class="hero">McGann's Music Shop</h1>
       <p>For all your music desires!!!</p>
   </header>
 
+<!-- Instruments -->
   <section id="instruments" class="container my-5">
       <h2 class="text-center">Featured Instruments</h2>
       <div class="row">
-          <div class="col-md-4">
+
+<!--Guitars-->
+        <div class="col-md-4" id="guitarDiv">
+          <a href="images/Instruments/guitars.html" style="text-decoration: none; color: inherit;">
               <div class="card">
                   <img src="https://images.guitarguitar.co.uk/cdn/small/160/753_gg_vintage23_lp1.jpg" class="card-img-top" alt="Guitars">
                   <div class="card-body">
@@ -67,51 +84,69 @@
                       <p class="card-text">Electric/Acoustic Guitars</p>
                   </div>
               </div>
-          </div>
+          </a>
+      </div>
+      <!--Piano-->
+
           <div class="col-md-4">
               <div class="card">
+                <a href="images/Instruments/piano.html" style="text-decoration: none; color: inherit;">
                   <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Steinway_Vienna_002.JPG" class="card-img-top" alt="Piano">
                   <div class="card-body">
                       <h5 class="card-title">Piano</h5>
                       <p class="card-text">Upright Pianos</p>
                   </div>
               </div>
+            </a>
           </div>
+
+ <!--Drums-->
           <div class="col-md-4">
               <div class="card">
+                <a href="images/Instruments/drums.html" style="text-decoration: none; color: inherit;">
                   <img src="https://assets.xlnaudio.com/pages/addictive_drums/2.5/dream-kit-bg-with-transition-1352px-2x.jpg" class="card-img-top" alt="Drums">
                   <div class="card-body">
                       <h5 class="card-title">Drums </h5>
                       <p class="card-text">Discover top-quality drum kits and percussion instruments.</p>
                   </div>
               </div>
+            </a>
           </div>
+  <!--Violin-->
           <div class="col-md-4">
             <div class="card">
+              <a href="images/Instruments/violin.html" style="text-decoration: none; color: inherit;">
                 <img src="https://www.corilon.com/media/image/f8/e5/22/peter-hornsteiner-5377-1a_1890x1890.jpg" class="card-img-top" alt="Violin">
                 <div class="card-body">
                     <h5 class="card-title">Violin</h5>
                     <p class="card-text">Acoustic Violins for classical and contemporary music.</p>
                 </div>
             </div>
+          </a>
         </div>
+<!--synthesisers-->
         <div class="col-md-4">
           <div class="card">
+            <a href="images/Instruments/synthesisers.html" style="text-decoration: none; color: inherit;">
               <img src="https://api.moogmusic.com/sites/default/files/styles/large_key/public/key_image/2022-11/Minimoog_Model_D_Website-5.jpg?itok=AEvGT6_I" class="card-img-top" alt="Synthesizers">
               <div class="card-body">
-                  <h5 class="card-title">Synthesizers</h5>
-                  <p class="card-text">Explore analog and digital synthesizers for creating unique sounds.</p>
+                  <h5 class="card-title">Synthesisers</h5>
+                  <p class="card-text">Explore analog and digital synthesisers for creating unique sounds.</p>
               </div>
           </div>   
+        </a>
       </div>
+<!--recording equipment-->
       <div class="col-md-4">
         <div class="card">
+          <a href="images/Instruments/recording_equipment.html" style="text-decoration: none; color: inherit;">
             <img src="https://sordan.ie/uploaded/photos/5435/1.jpg" class="card-img-top" alt="Recording Equipment">
             <div class="card-body">
                 <h5 class="card-title">Recording Equipment</h5>
                 <p class="card-text">High-quality microphones, mixers, and studio gear for professional recordings.</p>
             </div>
         </div>
+      </a>
     </div>
       </div>
   </section>
