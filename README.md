@@ -12,7 +12,7 @@ Project Overview
 
 McGann's Music is a functional e-commerce-style website developed as part of my Front End Web Development course assignment. The website showcases a variety of musical instruments, allowing users to browse categories, view product details, and interact with a dynamic interface.
 
-Feature: 
+Features: 
 
  - Responsive Design: Built with Bootstrap for seamless user experience across devices.
 
