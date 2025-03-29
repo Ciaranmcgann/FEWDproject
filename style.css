@@ -1,13 +1,21 @@
 body { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 15px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
 
-
 header {
   background-color: rgb(71, 116, 88) !important;
+  margin-top: 40px !important;
+  padding-bottom: 0px !important; 
 }
 
-.hero {
-  padding: 30px;
+header h1 {
+  margin-bottom: 0; 
 }
+
+header p {
+  margin-top: 0; 
+}
+
+
+
 #instruments .row {
   display: flex;
   justify-content: space-between; /* Distribute cards evenly */
@@ -76,3 +84,22 @@ header {
  .col-md-4{
   cursor: pointer;
  }
+ 
+ #contact {
+  margin-bottom: 50px;
+ }
+#map { 
+  width: 50%; height: 500px;;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.contact-form {
+  padding-bottom: 30px;
+width: 700px;
+}
+
