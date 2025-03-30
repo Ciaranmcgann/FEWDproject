@@ -13,52 +13,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <script src="/page_templates/templates.js"></script>
 
-  <!--Nav bar-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-          <a class="navbar-brand" href="#">Home</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                  <li class="nav-item">
-                  
-                  <!-- dropdown -->
-                  <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                          Instruments
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="pages/Instruments/guitars.html">Guitars</a></li>
-                          <li><a class="dropdown-item" href="pages/Instruments/piano.html">Piano</a></li>
-                          <li><a class="dropdown-item" href="pages/Instruments/drums.html">Drums & Percussion</a></li>
-                          <li><a class="dropdown-item" href="pages/Instruments/synthesisers.html">Synthesizers</a></li>
-                          <li><a class="dropdown-item" href="pages/Instruments/recording_equipment.html">Recording Equipment</a></li>
-                      </ul>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="/pages/contact.html">Contact</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="pages/login.html">Login</a>
-                  </li>
-              </ul>
-              <!-- Search Form -->
-              <form class="d-flex ms-3" onsubmit="searchFunction()">
-                  <input class="form-control me-2" type="search" placeholder="Search" id="searchInput">
-                  <button class="btn btn-outline-light" type="submit">Search</button>
-              </form>
-          </div>
-      </div>
-  </nav>
-  <!--Hero-->
-
-  <header class="text-white text-center py-5">
-      <h1 class="hero">McGann's Music Shop</h1>
-      <p>For all your music desires!!!</p>
-  </header>
+   <!--template nav and header-->
+   <div id="navbar"></div> 
+   <div id="header"></div>
 
 <!-- Instruments -->
 <section id="instruments" class="container my-5">
@@ -145,10 +104,7 @@
       </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3 fixed-bottom">
-      <p><i>Free shipping for purchases over &euro;100</i></p>
-  </footer>
+  <div id="footer"></div> <!-- Footer template -->
     <script src="script.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
