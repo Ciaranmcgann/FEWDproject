@@ -1,28 +1,66 @@
-document.getElementById("contact-form").addEventListener("submit", function(event) {
+document.querySelector("form").addEventListener("submit", function(event) {
   event.preventDefault(); // Prevent page refresh
 
-  const formData = {
-      service_id: "service_h527y6j", // Replace with your actual service ID
-      template_id: "template_rbx9u4m", // Replace with your actual template ID
-      user_id: "o1H0AqWWwgG-dBN0r", // Replace with your EmailJS Public API Key
+  const serviceID = "service_vngqn86";  // EmailJS Service ID
+  const userID = "o1H0AqWWwgG-dBN0r";  // EmailJS Public Key
+
+  const userName = document.getElementById("name").value;
+  const userEmail = document.getElementById("email").value;
+  const userMessage = document.getElementById("message").value;
+
+  if (!userName || !userEmail || !userMessage) {
+      alert("All fields are required!");
+      return;
+  }
+
+  // First email: User message sent to inbox
+  const userMessageData = {
+      service_id: serviceID,
+      template_id: "template_rbx9u4m", // email template ID
+      user_id: userID,
       template_params: {
-          from_name: document.getElementById("name").value,
-          from_email: document.getElementById("email").value,
-          message: document.getElementById("message").value
+          from_name: userName,
+          from_email: userEmail,
+          message: userMessage
       }
   };
 
+  // Second email: Auto-reply to user
+  const autoReplyData = {
+      service_id: serviceID,
+      template_id: "template_o5bn3x9", // auto-reply template ID
+      user_id: userID,
+      template_params: {
+          to_name: userName,
+          to_email: userEmail, 
+          reply_message: "Thank you for contacting us! We'll respond soon."
+      }
+  };
+
+  console.log("🚀 Sending user message:", userMessageData);
+
+  // Send first email (user message)
   fetch("https://api.emailjs.com/api/v1.0/email/send", {
       method: "POST",
-      headers: {
-          "Content-Type": "application/json"
-      },
-      body: JSON.stringify(formData)
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(userMessageData)
   })
-  .then(response => response.json())
-  .then(data => {
+  .then(response => response.text())
+  .then(responseText => {
+      console.log("✅ User message sent successfully!", responseText);
+
+      // Send auto-reply email
+      console.log("🚀 Sending auto-reply:", autoReplyData);
+      return fetch("https://api.emailjs.com/api/v1.0/email/send", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(autoReplyData)
+      });
+  })
+  .then(response => response.text())
+  .then(responseText => {
       alert("Email sent successfully!");
-      console.log("SUCCESS:", data);
+      console.log("Auto-reply sent successfully!", responseText);
   })
   .catch(error => {
       alert("Error sending email.");
