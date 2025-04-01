@@ -55,6 +55,8 @@ function generateInstrumentCards(type = "all") {
     container = document.getElementById("synthesisers-cards-container");
   } else if (type === "recordingEquipment") {
     container = document.getElementById("recording-equipment-cards-container");
+  } else if (type === "violin") {
+    container = document.getElementById("violin-cards-container");
   } else {
     container = document.getElementById("instrument-cards-container"); // Default container for all instruments
   }
@@ -74,13 +76,15 @@ function generateInstrumentCards(type = "all") {
   } else if (type === "drums") {
     data = drums;
   } else if (type === "piano") {
-    data = piano;
+    data = pianos;
   } else if (type === "synthesisers") {
     data = synthesisers;
   } else if (type === "recordingEquipment") {
     data = recordingEquipment;
+  } else if (type === "violin") {
+    data = violins;
   } else {
-    data = instruments; // Default data for other instruments
+    data = instruments; // Default data for all instruments
   }
 
   // Create and append cards for each instrument
@@ -90,6 +94,13 @@ function generateInstrumentCards(type = "all") {
 
     const cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
+
+    // only homepage instrument cards direct to next page
+
+    if (type === "all") {
+      cardDiv.classList.add("clickPage");
+      cardDiv.setAttribute("data-target", instrument.target);
+    }
 
     const imgElement = document.createElement("img");
     imgElement.src = instrument.image;
@@ -107,16 +118,28 @@ function generateInstrumentCards(type = "all") {
     textElement.classList.add("card-text");
     textElement.innerText = instrument.description;
 
-    const priceElement = document.createElement("p");  // Added price element
-    priceElement.classList.add("card-price");
-    priceElement.innerText = `Price: ${instrument.price}`;
+    // exclude price and add to cart button from home page
+    if (type !== "all") {
+      const addToCartButton = document.createElement("button"); // add to cart button added to div
+      addToCartButton.classList.add("btn", "btn-primary", "add-to-cart");
+      addToCartButton.innerText = "Add to Cart";
 
-    cardBodyDiv.appendChild(titleElement);
-    cardBodyDiv.appendChild(textElement);
+      const priceElement = document.createElement("p");  // Added price element
+      priceElement.classList.add("card-price");
+      priceElement.innerText = `Price: ${instrument.price}`;
+
+      cardBodyDiv.appendChild(titleElement);
+      cardBodyDiv.appendChild(textElement);
+      cardBodyDiv.appendChild(priceElement);
+      cardBodyDiv.appendChild(addToCartButton);
+    } else {
+      cardBodyDiv.appendChild(titleElement);
+      cardBodyDiv.appendChild(textElement);
+    }
+
     cardDiv.appendChild(imgElement);
     cardDiv.appendChild(cardBodyDiv);
     colDiv.appendChild(cardDiv);
-    cardBodyDiv.appendChild(priceElement);
     container.appendChild(colDiv);
   });
 }
@@ -125,7 +148,8 @@ function generateInstrumentCards(type = "all") {
 document.addEventListener("click", function(event) {
   const target = event.target.closest(".clickPage");
   if (target) {
-    window.location.href = target.getAttribute("data-target");
+    const targetPage = target.getAttribute("data-target");
+    window.location.assign(targetPage);
   }
 });
 
@@ -140,6 +164,8 @@ if (window.location.pathname.includes("guitars.html")) {
   generateInstrumentCards("synthesisers");
 } else if (window.location.pathname.includes("recording_equipment.html")) {
   generateInstrumentCards("recordingEquipment");
+} else if (window.location.pathname.includes("violin.html")) {
+  generateInstrumentCards("violin");
 } else {
   generateInstrumentCards("all");
 }

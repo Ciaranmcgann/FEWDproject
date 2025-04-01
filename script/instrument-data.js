@@ -212,3 +212,29 @@ const recordingEquipment = [
     price: "€179.99"  
   }
 ];
+
+// violins
+
+const violins = [
+  {
+    name: "Yamaha V5 Series",
+    type: "Violin",
+    description: "Ideal for students, this violin offers excellent playability and tone at an affordable price.",
+    image: "https://www.yamaha.com/violin-v5.jpg",
+    price: "€599.99"  
+  },
+  {
+    name: "Fender FV-1 Violin",
+    type: "Violin",
+    description: "Electric violin with a sleek design and great sound for modern performances.",
+    image: "https://www.fender.com/electric-violin.jpg",
+    price: "€899.99"  
+  },
+  {
+    name: "Cremona SV-175",
+    type: "Violin",
+    description: "High-quality student violin with a rich, full tone and easy playability.",
+    image: "https://www.cremona-violins.com/sv175.jpg",
+    price: "€299.99"  
+  }
+];
