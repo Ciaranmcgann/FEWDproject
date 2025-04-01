@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// search form
+// search form ( not working yet )
 function searchFunction() {
   var x = document.getElementById("searchInput").value;
 
@@ -38,61 +38,55 @@ function searchFunction() {
         .openPopup();
 });
 
-// Instrument array made of objects for each instrument
-const instruments = [
-  {
-    name: "Guitars",
-    description: "Electric/Acoustic Guitars",
-    image: "https://images.guitarguitar.co.uk/cdn/small/160/753_gg_vintage23_lp1.jpg",
-    target: "pages/Instruments/guitars.html"
-  },
-  {
-    name: "Piano",
-    description: "Upright Pianos",
-    image: "https://upload.wikimedia.org/wikipedia/commons/0/01/Steinway_Vienna_002.JPG",
-    target: "pages/Instruments/piano.html"
-  },
-  {
-    name: "Drums",
-    description: "Discover top-quality drum kits and percussion instruments.",
-    image: "https://assets.xlnaudio.com/pages/addictive_drums/2.5/dream-kit-bg-with-transition-1352px-2x.jpg",
-    target: "pages/Instruments/drums.html"
-  },
-  {
-    name: "Violin",
-    description: "Acoustic Violins for classical and contemporary music.",
-    image: "https://www.corilon.com/media/image/f8/e5/22/peter-hornsteiner-5377-1a_1890x1890.jpg",
-    target: "pages/Instruments/violin.html"
-  },
-  {
-    name: "Synthesisers",
-    description: "Explore analog and digital synthesisers for creating unique sounds.",
-    image: "https://api.moogmusic.com/sites/default/files/styles/large_key/public/key_image/2022-11/Minimoog_Model_D_Website-5.jpg?itok=AEvGT6_I",
-    target: "pages/Instruments/synthesisers.html"
-  },
-  {
-    name: "Recording Equipment",
-    description: "High-quality microphones, mixers, and studio gear for professional recordings.",
-    image: "https://sordan.ie/uploaded/photos/5435/1.jpg",
-    target: "pages/Instruments/recording_equipment.html"
-  },
-  {
-    name: "Other Instruments", // added this as a test to see if works
-    description: "Discover more instruments and accessories.",
-    image: "https://promova.com/content/instrumentos_musicales_1b472dd62d.png",
-    target: "pages/Instruments/recording_equipment.html"
-  }
-];
 
-// Function to create instrument cards dynamically
-function generateInstrumentCards() {
-  const container = document.getElementById("instrument-cards-container");
+
+
+
+function generateInstrumentCards(type = "all") {
+  // Get the container based on the type (guitar, drums, piano, synthesisers, or recording equipment)
+  let container;
+  if (type === "guitar") {
+    container = document.getElementById("guitar-cards-container");
+  } else if (type === "drums") {
+    container = document.getElementById("drum-cards-container");
+  } else if (type === "piano") {
+    container = document.getElementById("piano-cards-container");
+  } else if (type === "synthesisers") {
+    container = document.getElementById("synthesisers-cards-container");
+  } else if (type === "recordingEquipment") {
+    container = document.getElementById("recording-equipment-cards-container");
+  } else {
+    container = document.getElementById("instrument-cards-container"); // Default container for all instruments
+  }
+
+  // If the container is not found, log an error
+  if (!container) {
+    console.error(`${type} cards container not found!`);
+    return;
+  }
+
   container.innerHTML = ""; // Clear existing content before appending new items
 
-  instruments.forEach(instrument => {
+  // Determine the data to use based on the type
+  let data;
+  if (type === "guitar") {
+    data = guitars;
+  } else if (type === "drums") {
+    data = drums;
+  } else if (type === "piano") {
+    data = piano;
+  } else if (type === "synthesisers") {
+    data = synthesisers;
+  } else if (type === "recordingEquipment") {
+    data = recordingEquipment;
+  } else {
+    data = instruments; // Default data for other instruments
+  }
+
+  // Create and append cards for each instrument
+  data.forEach(instrument => {
     const colDiv = document.createElement("div");
-    colDiv.classList.add("col-md-4", "clickPage");
-    colDiv.setAttribute("data-target", instrument.target);
+    colDiv.classList.add("col-md-4");
 
     const cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
@@ -113,11 +107,16 @@ function generateInstrumentCards() {
     textElement.classList.add("card-text");
     textElement.innerText = instrument.description;
 
+    const priceElement = document.createElement("p");  // Added price element
+    priceElement.classList.add("card-price");
+    priceElement.innerText = `Price: ${instrument.price}`;
+
     cardBodyDiv.appendChild(titleElement);
     cardBodyDiv.appendChild(textElement);
     cardDiv.appendChild(imgElement);
     cardDiv.appendChild(cardBodyDiv);
     colDiv.appendChild(cardDiv);
+    cardBodyDiv.appendChild(priceElement);
     container.appendChild(colDiv);
   });
 }
@@ -130,5 +129,17 @@ document.addEventListener("click", function(event) {
   }
 });
 
-// Call the function to generate the cards on page load
-generateInstrumentCards();
+// Call the function to generate the instrument cards on page load (check the current page)
+if (window.location.pathname.includes("guitars.html")) {
+  generateInstrumentCards("guitar");
+} else if (window.location.pathname.includes("drums.html")) {
+  generateInstrumentCards("drums");
+} else if (window.location.pathname.includes("piano.html")) {
+  generateInstrumentCards("piano");
+} else if (window.location.pathname.includes("synthesisers.html")) {
+  generateInstrumentCards("synthesisers");
+} else if (window.location.pathname.includes("recording_equipment.html")) {
+  generateInstrumentCards("recordingEquipment");
+} else {
+  generateInstrumentCards("all");
+}
