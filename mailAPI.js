@@ -33,7 +33,6 @@ document.querySelector("form").addEventListener("submit", function(event) {
       template_params: {
           to_name: userName,
           to_email: userEmail, 
-          reply_message: "Thank you for contacting us! We'll respond soon."
       }
   };
 
@@ -47,7 +46,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
   })
   .then(response => response.text())
   .then(responseText => {
-      console.log("✅ User message sent successfully!", responseText);
+      console.log("User message sent successfully!", responseText);
 
       // Send auto-reply email
       console.log("🚀 Sending auto-reply:", autoReplyData);
