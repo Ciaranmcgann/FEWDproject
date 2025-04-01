@@ -16,13 +16,13 @@ Features:
 
 - Responsive Design: Built with Bootstrap for seamless user experience across devices.
 
-- Dynamic Instrument Categories: Organized browsing of various instruments.
+- Dynamic Instrument Categories: Organized browsing of various instruments. (instrument pages yet to be populated)
 
 - Search Functionality: Users can search for specific instruments. (not yet implemented)
 
 - Navigation Bar with Dropdowns: Easy access to different product categories.
 
-- Contact Information Section: Store details for user inquiries, with functional email form
+- Contact Information Section: Store details for user inquiries, with functional email form 
 
   
 
