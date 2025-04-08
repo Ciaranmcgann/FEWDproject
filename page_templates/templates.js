@@ -9,7 +9,7 @@ function loadHTML(elementId, file) {
 
 // Load components on every page
 document.addEventListener("DOMContentLoaded", function () {
-  loadHTML("navbar", "/page_templates/navbar.html");
-  loadHTML("header", "/page_templates/header.html");
-  loadHTML("footer", "/page_templates/footer.html");
+  loadHTML("navbar", "page_templates/navbar.html");
+  loadHTML("header", "page_templates/header.html");
+  loadHTML("footer", "page_templates/footer.html");
 });
