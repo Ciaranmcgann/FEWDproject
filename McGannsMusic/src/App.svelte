@@ -1,7 +1,21 @@
 <script>
-  import Navbar from "./library/components/navbar.svelte";
-  import Header from "./library/components/header.svelte";
-  import Footer from "./library/components/footer.svelte";
+  import { onMount } from "svelte";
+  import { Router } from "svelte-spa-router"; // Import the route store from svelte-spa-router
+  import {
+    instruments,
+    instrumentType,
+    fetchInstruments,
+    updateInstrumentType,
+  } from "./main.js"; // Import functions and variables
+
+  let currentRoute;
+
+  // Subscribe to the route store to track the current route
+  $: {
+    currentRoute = $route;
+    updateInstrumentType(currentRoute); // Update instrument type whenever the route changes
+    fetchInstruments(); // Fetch new instruments based on updated instrumentType
+  }
 </script>
 
 <main>
@@ -11,12 +25,27 @@
   <!-- Place Header component here -->
 
   <!-- Instruments -->
-  <section id="instruments" class="container my-5">
-    <h2 class="text-center">Featured Instruments</h2>
-    <div class="row" id="instrument-cards-container">
-      <!-- Dynamic content will be inserted here -->
-    </div>
-  </section>
+
+  <h1>Instruments</h1>
+  <div class="row">
+    {#each instruments as instrument}
+      <div class="col-md-4">
+        <div class="card">
+          <img
+            src={instrument.image}
+            alt={instrument.name}
+            class="card-img-top"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{instrument.name}</h5>
+            <p class="card-text">{instrument.description}</p>
+            <p class="card-price">Price: {instrument.price}</p>
+            <button class="btn btn-primary">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    {/each}
+  </div>
 
   <!-- Contact section-->
 

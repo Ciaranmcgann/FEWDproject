@@ -54,10 +54,11 @@ export default {
 		// consult the documentation for details:
 		// https://github.com/rollup/plugins/tree/master/packages/commonjs
 		resolve({
-			browser: true,
-			dedupe: ['svelte'],
-			exportConditions: ['svelte']
-		}),
+      browser: true,
+      dedupe: ['svelte'],
+      exportConditions: ['svelte'],
+      extensions: ['.mjs', '.js', '.svelte', '.json']
+    }),
 		commonjs(),
 
 		// In dev mode, call `npm run start` once
@@ -76,3 +77,4 @@ export default {
 		clearScreen: false
 	}
 };
+
