@@ -1,6 +1,5 @@
 <script>
   import { onMount } from "svelte";
-  import { Router } from "svelte-spa-router"; // Import the route store from svelte-spa-router
   import {
     instruments,
     instrumentType,
