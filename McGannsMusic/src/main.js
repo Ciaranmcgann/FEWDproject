@@ -60,86 +60,89 @@ function generateInstrumentCards(type = "all") {
   container.innerHTML = ""; // Clear existing content before appending new items
 
   // Fetching data from instrument json file
-
-  
   fetch('/src/library/instrument_data/instruments.json')
-  .then(response => response.json())
-  .then(jsonData => {
-    let data;
-    if (type === "guitar") {
-      data = jsonData.guitars;
-    } else if (type === "drums") {
-      data = jsonData.drums;
-    } else if (type === "piano") {
-      data = jsonData.pianos;
-    } else if (type === "synthesisers") {
-      data = jsonData.synthesisers;
-    } else if (type === "recordingEquipment") {
-      data = jsonData.recordingEquipment;
-    } else if (type === "violin") {
-      data = jsonData.violins;
-    } else {
-      data = jsonData.instruments; // For "all"
-    }
-  })
-  .catch(error => console.error('Error loading the JSON data:', error));
+    .then(response => response.json())
+    .then(jsonData => {
+      let data;
+      if (type === "guitar") {
+        data = jsonData.guitars;
+      } else if (type === "drums") {
+        data = jsonData.drums;
+      } else if (type === "piano") {
+        data = jsonData.pianos;
+      } else if (type === "synthesisers") {
+        data = jsonData.synthesisers;
+      } else if (type === "recordingEquipment") {
+        data = jsonData.recordingEquipment;
+      } else if (type === "violin") {
+        data = jsonData.violins;
+      } else {
+        data = jsonData.instruments; // For "all"
+      }
 
+      // Check if data is defined and an array
+      if (Array.isArray(data)) {
+        // Create and append cards for each instrument
+        data.forEach(instrument => {
+          const colDiv = document.createElement("div");
+          colDiv.classList.add("col-md-4");
 
-  // Create and append cards for each instrument
-  data.forEach(instrument => {
-    const colDiv = document.createElement("div");
-    colDiv.classList.add("col-md-4");
+          const cardDiv = document.createElement("div");
+          cardDiv.classList.add("card");
 
-    const cardDiv = document.createElement("div");
-    cardDiv.classList.add("card");
+          // only homepage instrument cards direct to next page
+          if (type === "all") {
+            cardDiv.classList.add("clickPage");
+            cardDiv.setAttribute("data-target", instrument.target);
+          }
 
-    // only homepage instrument cards direct to next page
+          const imgElement = document.createElement("img");
+          imgElement.src = instrument.image;
+          imgElement.classList.add("card-img-top");
+          imgElement.alt = instrument.name;
 
-    if (type === "all") {
-      cardDiv.classList.add("clickPage");
-      cardDiv.setAttribute("data-target", instrument.target);
-    }
+          const cardBodyDiv = document.createElement("div");
+          cardBodyDiv.classList.add("card-body");
 
-    const imgElement = document.createElement("img");
-    imgElement.src = instrument.image;
-    imgElement.classList.add("card-img-top");
-    imgElement.alt = instrument.name;
+          const titleElement = document.createElement("h5");
+          titleElement.classList.add("card-title");
+          titleElement.innerText = instrument.name;
 
-    const cardBodyDiv = document.createElement("div");
-    cardBodyDiv.classList.add("card-body");
+          const textElement = document.createElement("p");
+          textElement.classList.add("card-text");
+          textElement.innerText = instrument.description;
 
-    const titleElement = document.createElement("h5");
-    titleElement.classList.add("card-title");
-    titleElement.innerText = instrument.name;
+          // exclude price and add to cart button from home page
+          if (type !== "all") {
+            const addToCartButton = document.createElement("button"); // add to cart button added to div
+            addToCartButton.classList.add("btn", "btn-primary", "add-to-cart");
+            addToCartButton.innerText = "Add to Cart";
 
-    const textElement = document.createElement("p");
-    textElement.classList.add("card-text");
-    textElement.innerText = instrument.description;
+            const priceElement = document.createElement("p");  // Added price element
+            priceElement.classList.add("card-price");
+            priceElement.innerText = `Price: ${instrument.price}`;
 
-    // exclude price and add to cart button from home page
-    if (type !== "all") {
-      const addToCartButton = document.createElement("button"); // add to cart button added to div
-      addToCartButton.classList.add("btn", "btn-primary", "add-to-cart");
-      addToCartButton.innerText = "Add to Cart";
+            cardBodyDiv.appendChild(titleElement);
+            cardBodyDiv.appendChild(textElement);
+            cardBodyDiv.appendChild(priceElement);
+            cardBodyDiv.appendChild(addToCartButton);
+          } else {
+            cardBodyDiv.appendChild(titleElement);
+            cardBodyDiv.appendChild(textElement);
+          }
 
-      const priceElement = document.createElement("p");  // Added price element
-      priceElement.classList.add("card-price");
-      priceElement.innerText = `Price: ${instrument.price}`;
-
-      cardBodyDiv.appendChild(titleElement);
-      cardBodyDiv.appendChild(textElement);
-      cardBodyDiv.appendChild(priceElement);
-      cardBodyDiv.appendChild(addToCartButton);
-    } else {
-      cardBodyDiv.appendChild(titleElement);
-      cardBodyDiv.appendChild(textElement);
-    }
-
-    cardDiv.appendChild(imgElement);
-    cardDiv.appendChild(cardBodyDiv);
-    colDiv.appendChild(cardDiv);
-    container.appendChild(colDiv);
-  });
+          cardDiv.appendChild(imgElement);
+          cardDiv.appendChild(cardBodyDiv);
+          colDiv.appendChild(cardDiv);
+          container.appendChild(colDiv);
+        });
+      } else {
+        console.error('Invalid or empty data received.');
+      }
+    })
+    .catch(error => {
+      console.error('Error loading the JSON data:', error);
+    });
 }
 
 // Event delegation for dynamically added elements
