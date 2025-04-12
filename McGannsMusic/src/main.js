@@ -59,23 +59,31 @@ function generateInstrumentCards(type = "all") {
 
   container.innerHTML = ""; // Clear existing content before appending new items
 
-  // Determine the data to use based on the type
-  let data;
-  if (type === "guitar") {
-    data = guitars;
-  } else if (type === "drums") {
-    data = drums;
-  } else if (type === "piano") {
-    data = pianos;
-  } else if (type === "synthesisers") {
-    data = synthesisers;
-  } else if (type === "recordingEquipment") {
-    data = recordingEquipment;
-  } else if (type === "violin") {
-    data = violins;
-  } else {
-    data = instruments; // Default data for all instruments
-  }
+  // Fetching data from instrument json file
+
+  
+  fetch('/src/library/instrument_data/instruments.json')
+  .then(response => response.json())
+  .then(jsonData => {
+    let data;
+    if (type === "guitar") {
+      data = jsonData.guitars;
+    } else if (type === "drums") {
+      data = jsonData.drums;
+    } else if (type === "piano") {
+      data = jsonData.pianos;
+    } else if (type === "synthesisers") {
+      data = jsonData.synthesisers;
+    } else if (type === "recordingEquipment") {
+      data = jsonData.recordingEquipment;
+    } else if (type === "violin") {
+      data = jsonData.violins;
+    } else {
+      data = jsonData.instruments; // For "all"
+    }
+  })
+  .catch(error => console.error('Error loading the JSON data:', error));
+
 
   // Create and append cards for each instrument
   data.forEach(instrument => {
