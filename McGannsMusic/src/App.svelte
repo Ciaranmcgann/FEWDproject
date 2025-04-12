@@ -1,30 +1,37 @@
 <script>
-	export let name;
+  import Navbar from "./navbar.svelte";
+  import Header from "./header.svelte";
+  import Footer from "./footer.svelte";
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+  <Navbar />
+  <!-- Place Navbar component here -->
+  <Header />
+  <!-- Place Header component here -->
+
+  <!-- Instruments -->
+  <section id="instruments" class="container my-5">
+    <h2 class="text-center">Featured Instruments</h2>
+    <div class="row" id="instrument-cards-container">
+      <!-- Dynamic content will be inserted here -->
+    </div>
+  </section>
+
+  <!-- Contact section-->
+
+  <section id="contact" class="bg-light py-5">
+    <div class="container text-center">
+      <h2>Contact Us</h2>
+      <p>
+        Email: <strong>contact@mcgannsmusic.com </strong> <br />
+        Phone: <strong>+353 85 555 5555</strong> <br />
+        Address: <strong>29 Exchequer St, Dublin 2, D02 X310</strong>
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+  <!-- Place Footer component here -->
 </main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
+<!-- Footer template -->
