@@ -15,27 +15,12 @@
   <h1><a href="#/contact">Contact</a></h1>
 
   <!-- Instruments -->
-
-  <h1>Instruments</h1>
-  <div class="row">
-    {#each instruments as instrument}
-      <div class="col-md-4">
-        <div class="card">
-          <img
-            src={instrument.image}
-            alt={instrument.name}
-            class="card-img-top"
-          />
-          <div class="card-body">
-            <h5 class="card-title">{instrument.name}</h5>
-            <p class="card-text">{instrument.description}</p>
-            <p class="card-price">Price: {instrument.price}</p>
-            <button class="btn btn-primary">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-    {/each}
-  </div>
+  <section id="instruments" class="container my-5">
+    <h2 class="text-center">Featured Instruments</h2>
+    <div class="row" id="instrument-cards-container">
+      <!-- Dynamic content will be inserted here -->
+    </div>
+  </section>
 
   <!-- Contact section-->
 

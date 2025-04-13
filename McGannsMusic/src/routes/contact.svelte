@@ -1,10 +1,7 @@
 <script>
-<<<<<<< HEAD
-=======
   import Navbar from "../components/navbar.svelte";
   import Header from "../components/header.svelte";
   import Footer from "../components/footer.svelte";
->>>>>>> svelte_debug
 </script>
 
 <main>
