@@ -22,9 +22,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li>
-              <a class="dropdown-item" href="pages/Instruments/guitars.html"
-                >Guitars</a
-              >
+              <a class="dropdown-item" href="/Instruments/guitar">Guitars</a>
             </li>
             <li>
               <a class="dropdown-item" href="pages/Instruments/piano.html"

@@ -1,15 +1,19 @@
 <script>
-  import Navbar from "../public/components/navbar.svelte";
-  import Header from "../public/components/header.svelte";
-  import Footer from "../public/components/footer.svelte";
+  import Navbar from "./components/navbar.svelte";
+  import Header from "./components/header.svelte";
+  import Footer from "./components/footer.svelte";
+  import Router from "svelte-spa-router";
+  import routes from "./routes.js";
 </script>
+
+<Router {routes} />
 
 <main>
   <Navbar />
   <!-- Place Navbar component here -->
   <Header />
   <!-- Place Header component here -->
-
+  <h1><a href="#/contact">Contact</a></h1>
   <!-- Instruments -->
   <section id="instruments" class="container my-5">
     <h2 class="text-center">Featured Instruments</h2>

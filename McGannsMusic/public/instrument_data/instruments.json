@@ -4,7 +4,7 @@
       "name": "Guitars",
       "description": "Electric/Acoustic Guitars",
       "image": "https://images.guitarguitar.co.uk/cdn/small/160/753_gg_vintage23_lp1.jpg",
-      "target": "pages/Instruments/guitars.html"
+      "target": "/McGannsMusic/public/Instruments/guitar.svelte"
     },
     {
       "name": "Piano",

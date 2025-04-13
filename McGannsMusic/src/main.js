@@ -6,3 +6,4 @@ const app = new App({
 
 export default app; // pushes app.svelte to the index file
 
+
