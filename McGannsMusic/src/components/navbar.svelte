@@ -22,43 +22,36 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li>
-              <a class="dropdown-item" href="/Instruments/guitar">Guitars</a>
+              <a class="dropdown-item" href="#/Instruments/guitar">Guitars</a>
             </li>
             <li>
-              <a class="dropdown-item" href="pages/Instruments/piano.html"
-                >Piano</a
-              >
+              <a class="dropdown-item" href="#/Instruments/piano">Piano</a>
             </li>
             <li>
-              <a class="dropdown-item" href="pages/Instruments/violin.html"
-                >Violin</a
-              >
+              <a class="dropdown-item" href="#/Instruments/violin">Violin</a>
             </li>
             <li>
-              <a class="dropdown-item" href="pages/Instruments/drums.html"
+              <a class="dropdown-item" href="#/Instruments/drums"
                 >Drums & Percussion</a
               >
             </li>
             <li>
-              <a
-                class="dropdown-item"
-                href="pages/Instruments/synthesisers.html">Synthesizers</a
+              <a class="dropdown-item" href="#/Instruments/synthesisers"
+                >Synthesizers</a
               >
             </li>
             <li>
-              <a
-                class="dropdown-item"
-                href="pages/Instruments/recording_equipment.html"
+              <a class="dropdown-item" href="#/Instruments/recording_equipment"
                 >Recording Equipment</a
               >
             </li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="pages/contact.html">Contact</a>
+          <a class="nav-link" href="#/contact">Contact</a>
         </li>
         <li>
-          <a class="nav-link" href="pages/shopping_cart.html">
+          <a class="nav-link" href="#/shopping_cart">
             <div class="cart">
               <i class="bi bi-cart"></i>
               <div class="cartAmount">0</div>
@@ -66,15 +59,6 @@
           </a>
         </li>
       </ul>
-      <form class="d-flex ms-3" onsubmit="searchFunction()">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          id="searchInput"
-        />
-        <button class="btn btn-outline-light" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>

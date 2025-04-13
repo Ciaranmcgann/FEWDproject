@@ -6,14 +6,14 @@
   import routes from "./routes.js";
 </script>
 
-<Router {routes} />
-
 <main>
   <Navbar />
   <!-- Place Navbar component here -->
   <Header />
   <!-- Place Header component here -->
+  <Router {routes} />
   <h1><a href="#/contact">Contact</a></h1>
+
   <!-- Instruments -->
   <section id="instruments" class="container my-5">
     <h2 class="text-center">Featured Instruments</h2>
