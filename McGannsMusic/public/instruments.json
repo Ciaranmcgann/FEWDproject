@@ -35,12 +35,6 @@
       "description": "High-quality microphones, mixers, and studio gear for professional recordings.",
       "image": "https://sordan.ie/uploaded/photos/5435/1.jpg",
       "target": "pages/Instruments/recording_equipment.html"
-    },
-    {
-      "name": "Other Instruments",
-      "description": "Discover more instruments and accessories.",
-      "image": "https://promova.com/content/instrumentos_musicales_1b472dd62d.png",
-      "target": "pages/Instruments/recording_equipment.html"
     }
   ],
   "guitars": [

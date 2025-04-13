@@ -1,3 +1,5 @@
+console.log("mailAPI.js loaded");
+
 document.querySelector("form").addEventListener("submit", function(event) {
   event.preventDefault(); // Prevent page refresh
 

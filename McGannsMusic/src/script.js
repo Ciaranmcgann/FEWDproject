@@ -12,14 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// search form ( not working yet )
-function searchFunction() {
-  var x = document.getElementById("searchInput").value;
-
-  if (x === "guitar"){
-    window.open
-  }
-}
 
 
 
@@ -52,7 +44,7 @@ function generateInstrumentCards(type = "all") {
   container.innerHTML = ""; // Clear existing content before appending new items
 
   // Fetching data from instrument json file
-  fetch('/McGannsMusic/public//instrument_data/instruments.json')
+  fetch('/McGannsMusic/public/instruments.json')
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -154,18 +146,25 @@ document.addEventListener("click", function(event) {
 });
 
 // Call the function to generate the instrument cards on page load (check the current page)
-if (window.location.pathname.includes("guitars.html")) {
+const path = window.location.pathname;
+
+if (path === "#/Instruments/guitar") {
   generateInstrumentCards("guitar");
-} else if (window.location.pathname.includes("drums.html")) {
+} else if (path === "/Instruments/drums") {
   generateInstrumentCards("drums");
-} else if (window.location.pathname.includes("piano.html")) {
+} else if (path === "/Instruments/piano") {
   generateInstrumentCards("piano");
-} else if (window.location.pathname.includes("synthesisers.html")) {
+} else if (path === "/Instruments/synthesisers") {
   generateInstrumentCards("synthesisers");
-} else if (window.location.pathname.includes("recording_equipment.html")) {
+} else if (path === "/Instruments/recording_equipment") {
   generateInstrumentCards("recordingEquipment");
-} else if (window.location.pathname.includes("violin.html")) {
+} else if (path === "/Instruments/violin") {
   generateInstrumentCards("violin");
-} else {
+} else if (
+  path === "/" || 
+  path.endsWith("/index.html") || 
+  path === "/McGannsMusic/" || 
+  path === "/McGannsMusic/index.html"
+) {
   generateInstrumentCards("all");
 }
