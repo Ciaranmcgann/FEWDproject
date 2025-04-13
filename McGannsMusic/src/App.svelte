@@ -1,20 +1,9 @@
 <script>
-  import { onMount } from "svelte";
-  import {
-    instruments,
-    instrumentType,
-    fetchInstruments,
-    updateInstrumentType,
-  } from "./main.js"; // Import functions and variables
-
-  let currentRoute;
-
-  // Subscribe to the route store to track the current route
-  $: {
-    currentRoute = $route;
-    updateInstrumentType(currentRoute); // Update instrument type whenever the route changes
-    fetchInstruments(); // Fetch new instruments based on updated instrumentType
-  }
+  import Navbar from "./components/navbar.svelte";
+  import Header from "./components/header.svelte";
+  import Footer from "./components/footer.svelte";
+  import Router from "svelte-spa-router";
+  import routes from "./routes.js";
 </script>
 
 <main>
@@ -22,6 +11,8 @@
   <!-- Place Navbar component here -->
   <Header />
   <!-- Place Header component here -->
+  <Router {routes} />
+  <h1><a href="#/contact">Contact</a></h1>
 
   <!-- Instruments -->
 

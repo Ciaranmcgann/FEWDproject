@@ -31,6 +31,7 @@ const app = new Router({
 
 console.log("script.js loaded!"); // to see if script is connected to htmls
 
+<<<<<<< HEAD
 // clicks to new page for instrument divs on homepage 
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".clickPage").forEach(div => {
@@ -84,3 +85,6 @@ export function updateInstrumentType(currentRoute) {
     instrumentType = 'all'; // Default to 'all' if no match
   }
 }
+=======
+
+>>>>>>> svelte_debug
