@@ -4,37 +4,37 @@
       "name": "Guitars",
       "description": "Electric/Acoustic Guitars",
       "image": "https://images.guitarguitar.co.uk/cdn/small/160/753_gg_vintage23_lp1.jpg",
-      "target": "/McGannsMusic/public/Instruments/guitar.svelte"
+      "target": "#/Instruments/guitar"
     },
     {
       "name": "Piano",
       "description": "Upright Pianos",
       "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Steinway_Vienna_002.JPG",
-      "target": "pages/Instruments/piano.html"
+      "target": "#/Instruments/piano"
     },
     {
       "name": "Drums",
       "description": "Discover top-quality drum kits and percussion instruments.",
       "image": "https://assets.xlnaudio.com/pages/addictive_drums/2.5/dream-kit-bg-with-transition-1352px-2x.jpg",
-      "target": "pages/Instruments/drums.html"
+      "target": "#/Instruments/drums"
     },
     {
       "name": "Violin",
       "description": "Acoustic Violins for classical and contemporary music.",
       "image": "https://www.corilon.com/media/image/f8/e5/22/peter-hornsteiner-5377-1a_1890x1890.jpg",
-      "target": "pages/Instruments/violin.html"
+      "target": "#/Instruments/violin"
     },
     {
       "name": "Synthesisers",
       "description": "Explore analog and digital synthesisers for creating unique sounds.",
       "image": "https://api.moogmusic.com/sites/default/files/styles/large_key/public/key_image/2022-11/Minimoog_Model_D_Website-5.jpg?itok=AEvGT6_I",
-      "target": "pages/Instruments/synthesisers.html"
+      "target": "#/Instruments/synthesisers"
     },
     {
       "name": "Recording Equipment",
       "description": "High-quality microphones, mixers, and studio gear for professional recordings.",
       "image": "https://sordan.ie/uploaded/photos/5435/1.jpg",
-      "target": "pages/Instruments/recording_equipment.html"
+      "target": "#/Instruments/recording_equipment"
     }
   ],
   "guitars": [
