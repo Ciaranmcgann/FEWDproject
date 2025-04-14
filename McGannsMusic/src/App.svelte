@@ -4,7 +4,6 @@
   import Footer from "./components/footer.svelte";
   import Router from "svelte-spa-router";
   import routes from "./routes.js";
-  import "/style.css";
 </script>
 
 <main>
