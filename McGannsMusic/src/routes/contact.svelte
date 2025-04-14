@@ -5,11 +5,10 @@
 
   import { onMount } from "svelte";
   import L from "leaflet";
-  import "leaflet/dist/leaflet.css";
 
   onMount(() => {
     // Initialize the map
-    const map = L.map("map").setView([53.34399, -6.24856], 3);
+    const map = L.map("map").setView([53.34399, -6.24856], 12);
 
     // Add OpenStreetMap tiles
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -26,19 +25,6 @@
 </script>
 
 <main>
-  <style>
-    /* Ensure the map container has a proper height */
-    .map-container {
-      /* Adjust the height of the map container */
-      height: 400px; /* Change this value as needed */
-      width: 100%; /* Responsive map */
-    }
-
-    /* Optional: Add margin to the contact form */
-    .container.contact-form {
-      margin-top: 30px;
-    }
-  </style>
   <div class="map-container">
     <div id="map"></div>
   </div>
@@ -63,3 +49,17 @@
     </form>
   </div>
 </main>
+
+<style>
+  /* Ensure the map container has a proper height */
+  .map-container {
+    /* Adjust the height of the map container */
+    height: 400px; /* Change this value as needed */
+    width: 100%; /* Responsive map */
+  }
+
+  /* Optional: Add margin to the contact form */
+  .container.contact-form {
+    margin-top: 30px;
+  }
+</style>
