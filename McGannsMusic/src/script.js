@@ -146,25 +146,21 @@ document.addEventListener("click", function(event) {
 });
 
 // Call the function to generate the instrument cards on page load (check the current page)
-const path = window.location.pathname;
+const hash = window.location.hash;
+console.log("Hash:", hash);
 
-if (path === "#/Instruments/guitar") {
+if (hash.includes("/Instruments/guitar")) {
   generateInstrumentCards("guitar");
-} else if (path === "/Instruments/drums") {
+} else if (hash.includes("/Instruments/drums")) {
   generateInstrumentCards("drums");
-} else if (path === "/Instruments/piano") {
+} else if (hash.includes("/Instruments/piano")) {
   generateInstrumentCards("piano");
-} else if (path === "/Instruments/synthesisers") {
+} else if (hash.includes("/Instruments/synthesisers")) {
   generateInstrumentCards("synthesisers");
-} else if (path === "/Instruments/recording_equipment") {
+} else if (hash.includes("/Instruments/recording_equipment")) {
   generateInstrumentCards("recordingEquipment");
-} else if (path === "/Instruments/violin") {
+} else if (hash.includes("/Instruments/violin")) {
   generateInstrumentCards("violin");
-} else if (
-  path === "/" || 
-  path.endsWith("/index.html") || 
-  path === "/McGannsMusic/" || 
-  path === "/McGannsMusic/index.html"
-) {
+} else {
   generateInstrumentCards("all");
 }

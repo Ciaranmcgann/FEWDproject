@@ -1,16 +1,4 @@
-<script>
-  import Navbar from "../components/navbar.svelte";
-  import Header from "../components/header.svelte";
-  import Footer from "../components/footer.svelte";
-</script>
-
 <main>
-  <!-- Navbar component -->
-  <Navbar />
-
-  <!-- Header component -->
-  <Header />
-
   <!-- Cart Section (copied from Bootstrap, will do as placeholder for now)-->
   <section class="h-100 gradient-custom">
     <div class="container py-5">
@@ -56,7 +44,4 @@
       </div>
     </div>
   </section>
-
-  <!-- Footer component -->
-  <Footer />
 </main>

@@ -23,12 +23,6 @@
         .openPopup();
     });
   </script>
-  <!-- Navbar component -->
-  <Navbar />
-
-  <!-- Header component -->
-  <Header />
-  <!-- section for map -->
   <div class="map-container">
     <div id="map"></div>
   </div>
@@ -52,7 +46,4 @@
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
-
-  <!-- Footer component -->
-  <Footer />
 </main>

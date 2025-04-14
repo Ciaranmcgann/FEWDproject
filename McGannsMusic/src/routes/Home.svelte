@@ -1,9 +1,7 @@
 <script>
-  import Navbar from "./components/navbar.svelte";
-  import Header from "./components/header.svelte";
-  import Footer from "./components/footer.svelte";
-  import Router from "svelte-spa-router";
-  import routes from "./routes.js";
+  import Navbar from "/components/navbar.svelte";
+  import Header from "/components/header.svelte";
+  import Footer from "/components/footer.svelte";
 </script>
 
 <main>
@@ -11,7 +9,6 @@
   <!-- Place Navbar component here -->
   <Header />
   <!-- Place Header component here -->
-  <Router {routes} />
 
   <!-- Instruments -->
   <section id="instruments" class="container my-5">

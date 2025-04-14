@@ -1,16 +1,4 @@
-<script>
-  import Navbar from "../../components/navbar.svelte";
-  import Header from "../../components/header.svelte";
-  import Footer from "../../components/footer.svelte";
-</script>
-
 <main>
-  <!-- Navbar component -->
-  <Navbar />
-
-  <!-- Header component -->
-  <Header />
-
   <!-- Pianos section -->
   <section id="piano" class="container my-5">
     <h2 class="text-center">Piano</h2>
@@ -20,5 +8,4 @@
   </section>
 
   <!-- Footer component -->
-  <Footer />
 </main>
