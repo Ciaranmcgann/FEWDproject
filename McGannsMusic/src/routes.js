@@ -5,6 +5,7 @@ import Violin from './routes/Instruments/violin.svelte';
 import Synths from './routes/Instruments/synthesisers.svelte';
 import Recording from './routes/Instruments/recording_equipment.svelte';
 
+import Home from './routes/Home.svelte';
 import Contact from './routes/contact.svelte';
 import ShoppingCart from './routes/shopping_cart.svelte';
 
@@ -17,6 +18,7 @@ const routes = {
   '/Instruments/recording_equipment': Recording,
   '/contact': Contact,
   '/shopping_cart': ShoppingCart,
+  '/': Home,
 };
 
 export default routes;

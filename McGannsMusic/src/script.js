@@ -1,6 +1,8 @@
 console.log("script.js loaded!"); // to see if script is connected to htmls
 
 // clicks to new page for instrument divs on homepage 
+
+
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".clickPage").forEach(div => {
       div.addEventListener("click", function () {
@@ -14,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+document.addEventListener("DOMContentLoaded", function () {
 
 function generateInstrumentCards(type = "all") {
   // Get the container based on the type (guitar, drums, piano, synthesisers, or recording equipment)
@@ -44,7 +46,7 @@ function generateInstrumentCards(type = "all") {
   container.innerHTML = ""; // Clear existing content before appending new items
 
   // Fetching data from instrument json file
-  fetch('/McGannsMusic/public/instruments.json')
+  fetch('/instruments.json')
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -164,3 +166,4 @@ if (hash.includes("/Instruments/guitar")) {
 } else {
   generateInstrumentCards("all");
 }
+});

@@ -1,15 +1,4 @@
-<script>
-  import Navbar from "/components/navbar.svelte";
-  import Header from "/components/header.svelte";
-  import Footer from "/components/footer.svelte";
-</script>
-
 <main>
-  <Navbar />
-  <!-- Place Navbar component here -->
-  <Header />
-  <!-- Place Header component here -->
-
   <!-- Instruments -->
   <section id="instruments" class="container my-5">
     <h2 class="text-center">Featured Instruments</h2>
@@ -30,8 +19,5 @@
       </p>
     </div>
   </section>
-
-  <Footer />
-  <!-- Place Footer component here -->
 </main>
 <!-- Footer template -->

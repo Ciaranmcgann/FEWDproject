@@ -5,24 +5,6 @@
 </script>
 
 <main>
-  <script>
-    import { onMount } from "svelte";
-    import L from "leaflet";
-    import "leaflet/dist/leaflet.css";
-
-    onMount(() => {
-      const map = L.map("map").setView([53.34399, -6.24856], 13);
-
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: "&copy; OpenStreetMap contributors",
-      }).addTo(map);
-
-      L.marker([53.3431, -6.2626])
-        .addTo(map)
-        .bindPopup("McGann's Music Shop")
-        .openPopup();
-    });
-  </script>
   <div class="map-container">
     <div id="map"></div>
   </div>
