@@ -17712,7 +17712,7 @@ var app = (function () {
       container.innerHTML = ""; // Clear existing content before appending new items
 
       // Fetching data from instrument json file
-      fetch('/FEWDproject/public/instruments.json')
+      fetch('/FEWDproject/instruments.json')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
