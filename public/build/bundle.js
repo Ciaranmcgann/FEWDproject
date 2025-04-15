@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var app = (function () {
     'use strict';
 
@@ -17682,8 +17682,6 @@ var app = (function () {
 
 
 
-    document.addEventListener("DOMContentLoaded", function () {
-
     function generateInstrumentCards(type = "all") {
       // Get the container based on the type (guitar, drums, piano, synthesisers, or recording equipment)
       let container;
@@ -17804,6 +17802,8 @@ var app = (function () {
         });
     }
 
+    // onMount fixes the dom loading before the script
+    onMount(() => {
     // Event delegation for dynamically added elements
     document.addEventListener("click", function(event) {
       const target = event.target.closest(".clickPage");

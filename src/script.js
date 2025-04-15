@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+import { onMount } from 'svelte';
 
 
-document.addEventListener("DOMContentLoaded", function () {
 
 function generateInstrumentCards(type = "all") {
   // Get the container based on the type (guitar, drums, piano, synthesisers, or recording equipment)
@@ -138,6 +138,8 @@ function generateInstrumentCards(type = "all") {
     });
 }
 
+// onMount fixes the dom loading before the script
+onMount(() => {
 // Event delegation for dynamically added elements
 document.addEventListener("click", function(event) {
   const target = event.target.closest(".clickPage");
