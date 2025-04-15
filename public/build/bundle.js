@@ -17668,6 +17668,8 @@ var app = (function () {
 
     // clicks to new page for instrument divs on homepage 
 
+    document.addEventListener("DOMContentLoaded", function () {
+
 
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".clickPage").forEach(div => {
@@ -17832,6 +17834,8 @@ var app = (function () {
     } else {
       generateInstrumentCards("all");
     }
+
+    });
 
     document.addEventListener("DOMContentLoaded", function () {
       console.log("mailAPI.js loaded");

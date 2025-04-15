@@ -2,6 +2,8 @@ console.log("script.js loaded!"); // to see if script is connected to htmls
 
 // clicks to new page for instrument divs on homepage 
 
+document.addEventListener("DOMContentLoaded", function () {
+
 
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".clickPage").forEach(div => {
@@ -167,3 +169,4 @@ if (hash.includes("/Instruments/guitar")) {
   generateInstrumentCards("all");
 }
 
+});
