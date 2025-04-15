@@ -2,6 +2,7 @@
   import Navbar from "../components/navbar.svelte";
   import Header from "../components/header.svelte";
   import Footer from "../components/footer.svelte";
+  import "../mailAPI.js";
 
   import { onMount } from "svelte";
   import L from "leaflet";

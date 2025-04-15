@@ -2641,6 +2641,84 @@ var app = (function () {
     	}
     }
 
+    document.addEventListener("DOMContentLoaded", function () {
+      console.log("mailAPI.js loaded");
+
+      const form = document.querySelector("form");
+      if (form) {
+          form.addEventListener("submit", function(event) {
+              event.preventDefault(); // Prevent page refresh
+
+              const serviceID = "service_vngqn86";  // EmailJS Service ID
+              const userID = "o1H0AqWWwgG-dBN0r";  // EmailJS Public Key
+
+              const userName = document.getElementById("name").value;
+              const userEmail = document.getElementById("email").value;
+              const userMessage = document.getElementById("message").value;
+
+              if (!userName || !userEmail || !userMessage) {
+                  alert("All fields are required!");
+                  return;
+              }
+
+              // First email: User message sent to inbox
+              const userMessageData = {
+                  service_id: serviceID,
+                  template_id: "template_rbx9u4m", // email template ID
+                  user_id: userID,
+                  template_params: {
+                      from_name: userName,
+                      from_email: userEmail,
+                      message: userMessage
+                  }
+              };
+
+              // Second email: Auto-reply to user
+              const autoReplyData = {
+                  service_id: serviceID,
+                  template_id: "template_o5bn3x9", // auto-reply template ID
+                  user_id: userID,
+                  template_params: {
+                      to_name: userName,
+                      to_email: userEmail, 
+                  }
+              };
+
+              console.log("🚀 Sending user message:", userMessageData);
+
+              // Send first email (user message)
+              fetch("https://api.emailjs.com/api/v1.0/email/send", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify(userMessageData)
+              })
+              .then(response => response.text())
+              .then(responseText => {
+                  console.log("User message sent successfully!", responseText);
+
+                  // Send auto-reply email
+                  console.log("🚀 Sending auto-reply:", autoReplyData);
+                  return fetch("https://api.emailjs.com/api/v1.0/email/send", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify(autoReplyData)
+                  });
+              })
+              .then(response => response.text())
+              .then(responseText => {
+                  alert("Email sent successfully!");
+                  console.log("Auto-reply sent successfully!", responseText);
+              })
+              .catch(error => {
+                  alert("Error sending email.");
+                  console.error("FAILED:", error);
+              });
+          });
+      } else {
+          console.error("Form element not found.");
+      }
+    });
+
     var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
     function getDefaultExportFromCjs (x) {
@@ -17225,48 +17303,48 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Submit";
     			attr_dev(div0, "id", "map");
-    			add_location(div0, file$2, 28, 4, 795);
+    			add_location(div0, file$2, 29, 4, 821);
     			attr_dev(div1, "class", "map-container svelte-7tc373");
-    			add_location(div1, file$2, 27, 2, 763);
-    			add_location(h2, file$2, 32, 4, 874);
+    			add_location(div1, file$2, 28, 2, 789);
+    			add_location(h2, file$2, 33, 4, 900);
     			attr_dev(label0, "for", "name");
     			attr_dev(label0, "class", "form-label");
-    			add_location(label0, file$2, 35, 8, 956);
+    			add_location(label0, file$2, 36, 8, 982);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "class", "form-control");
     			attr_dev(input0, "id", "name");
     			input0.required = true;
-    			add_location(input0, file$2, 36, 8, 1019);
+    			add_location(input0, file$2, 37, 8, 1045);
     			attr_dev(div2, "class", "mb-3");
-    			add_location(div2, file$2, 34, 6, 929);
+    			add_location(div2, file$2, 35, 6, 955);
     			attr_dev(label1, "for", "email");
     			attr_dev(label1, "class", "form-label");
-    			add_location(label1, file$2, 39, 8, 1127);
+    			add_location(label1, file$2, 40, 8, 1153);
     			attr_dev(input1, "type", "email");
     			attr_dev(input1, "class", "form-control");
     			attr_dev(input1, "id", "email");
     			input1.required = true;
-    			add_location(input1, file$2, 40, 8, 1192);
+    			add_location(input1, file$2, 41, 8, 1218);
     			attr_dev(div3, "class", "mb-3");
-    			add_location(div3, file$2, 38, 6, 1100);
+    			add_location(div3, file$2, 39, 6, 1126);
     			attr_dev(label2, "for", "message");
     			attr_dev(label2, "class", "form-label");
-    			add_location(label2, file$2, 43, 8, 1302);
+    			add_location(label2, file$2, 44, 8, 1328);
     			attr_dev(textarea, "class", "form-control");
     			attr_dev(textarea, "id", "message");
     			attr_dev(textarea, "rows", "4");
     			textarea.required = true;
-    			add_location(textarea, file$2, 44, 8, 1366);
+    			add_location(textarea, file$2, 45, 8, 1392);
     			attr_dev(div4, "class", "mb-3");
-    			add_location(div4, file$2, 42, 6, 1275);
+    			add_location(div4, file$2, 43, 6, 1301);
     			attr_dev(button, "type", "submit");
     			attr_dev(button, "class", "btn btn-primary");
-    			add_location(button, file$2, 47, 6, 1468);
+    			add_location(button, file$2, 48, 6, 1494);
     			attr_dev(form, "id", "contact-form");
-    			add_location(form, file$2, 33, 4, 898);
+    			add_location(form, file$2, 34, 4, 924);
     			attr_dev(div5, "class", "container mt-5 contact-form svelte-7tc373");
-    			add_location(div5, file$2, 31, 2, 828);
-    			add_location(main, file$2, 26, 0, 754);
+    			add_location(div5, file$2, 32, 2, 854);
+    			add_location(main, file$2, 27, 0, 780);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -17835,84 +17913,6 @@ var app = (function () {
       generateInstrumentCards("all");
     }
 
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-      console.log("mailAPI.js loaded");
-
-      const form = document.querySelector("form");
-      if (form) {
-          form.addEventListener("submit", function(event) {
-              event.preventDefault(); // Prevent page refresh
-
-              const serviceID = "service_vngqn86";  // EmailJS Service ID
-              const userID = "o1H0AqWWwgG-dBN0r";  // EmailJS Public Key
-
-              const userName = document.getElementById("name").value;
-              const userEmail = document.getElementById("email").value;
-              const userMessage = document.getElementById("message").value;
-
-              if (!userName || !userEmail || !userMessage) {
-                  alert("All fields are required!");
-                  return;
-              }
-
-              // First email: User message sent to inbox
-              const userMessageData = {
-                  service_id: serviceID,
-                  template_id: "template_rbx9u4m", // email template ID
-                  user_id: userID,
-                  template_params: {
-                      from_name: userName,
-                      from_email: userEmail,
-                      message: userMessage
-                  }
-              };
-
-              // Second email: Auto-reply to user
-              const autoReplyData = {
-                  service_id: serviceID,
-                  template_id: "template_o5bn3x9", // auto-reply template ID
-                  user_id: userID,
-                  template_params: {
-                      to_name: userName,
-                      to_email: userEmail, 
-                  }
-              };
-
-              console.log("🚀 Sending user message:", userMessageData);
-
-              // Send first email (user message)
-              fetch("https://api.emailjs.com/api/v1.0/email/send", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify(userMessageData)
-              })
-              .then(response => response.text())
-              .then(responseText => {
-                  console.log("User message sent successfully!", responseText);
-
-                  // Send auto-reply email
-                  console.log("🚀 Sending auto-reply:", autoReplyData);
-                  return fetch("https://api.emailjs.com/api/v1.0/email/send", {
-                      method: "POST",
-                      headers: { "Content-Type": "application/json" },
-                      body: JSON.stringify(autoReplyData)
-                  });
-              })
-              .then(response => response.text())
-              .then(responseText => {
-                  alert("Email sent successfully!");
-                  console.log("Auto-reply sent successfully!", responseText);
-              })
-              .catch(error => {
-                  alert("Error sending email.");
-                  console.error("FAILED:", error);
-              });
-          });
-      } else {
-          console.error("Form element not found.");
-      }
     });
 
     const app = new App({
