@@ -17682,6 +17682,8 @@ var app = (function () {
 
 
 
+
+
     function generateInstrumentCards(type = "all") {
       // Get the container based on the type (guitar, drums, piano, synthesisers, or recording equipment)
       let container;
