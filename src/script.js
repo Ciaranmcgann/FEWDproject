@@ -138,8 +138,6 @@ function generateInstrumentCards(type = "all") {
     });
 }
 
-// onMount fixes the dom loading before the script
-onMount(() => {
 // Event delegation for dynamically added elements
 document.addEventListener("click", function(event) {
   const target = event.target.closest(".clickPage");
@@ -168,4 +166,4 @@ if (hash.includes("/Instruments/guitar")) {
 } else {
   generateInstrumentCards("all");
 }
-});
+

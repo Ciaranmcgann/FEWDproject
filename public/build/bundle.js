@@ -17802,8 +17802,6 @@ var app = (function () {
         });
     }
 
-    // onMount fixes the dom loading before the script
-    onMount(() => {
     // Event delegation for dynamically added elements
     document.addEventListener("click", function(event) {
       const target = event.target.closest(".clickPage");
@@ -17832,7 +17830,6 @@ var app = (function () {
     } else {
       generateInstrumentCards("all");
     }
-    });
 
     document.addEventListener("DOMContentLoaded", function () {
       console.log("mailAPI.js loaded");
