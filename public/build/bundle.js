@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var app = (function () {
     'use strict';
 
@@ -652,69 +652,69 @@ var app = (function () {
     			div0 = element("div");
     			div0.textContent = "0";
     			attr_dev(a0, "class", "navbar-brand");
-    			attr_dev(a0, "href", "/index.html");
+    			attr_dev(a0, "href", "/");
     			add_location(a0, file$c, 2, 4, 98);
     			attr_dev(span, "class", "navbar-toggler-icon");
-    			add_location(span, file$c, 9, 6, 289);
+    			add_location(span, file$c, 9, 6, 279);
     			attr_dev(button, "class", "navbar-toggler");
     			attr_dev(button, "type", "button");
     			attr_dev(button, "data-bs-toggle", "collapse");
     			attr_dev(button, "data-bs-target", "#navbarNav");
-    			add_location(button, file$c, 3, 4, 154);
+    			add_location(button, file$c, 3, 4, 144);
     			attr_dev(a1, "class", "nav-link dropdown-toggle");
     			attr_dev(a1, "id", "navbarDropdown");
     			attr_dev(a1, "role", "button");
     			attr_dev(a1, "data-bs-toggle", "dropdown");
-    			add_location(a1, file$c, 14, 10, 490);
+    			add_location(a1, file$c, 14, 10, 480);
     			attr_dev(a2, "class", "dropdown-item");
     			attr_dev(a2, "href", "#/Instruments/guitar");
-    			add_location(a2, file$c, 24, 14, 786);
-    			add_location(li0, file$c, 23, 12, 767);
+    			add_location(a2, file$c, 24, 14, 776);
+    			add_location(li0, file$c, 23, 12, 757);
     			attr_dev(a3, "class", "dropdown-item");
     			attr_dev(a3, "href", "#/Instruments/piano");
-    			add_location(a3, file$c, 27, 14, 900);
-    			add_location(li1, file$c, 26, 12, 881);
+    			add_location(a3, file$c, 27, 14, 890);
+    			add_location(li1, file$c, 26, 12, 871);
     			attr_dev(a4, "class", "dropdown-item");
     			attr_dev(a4, "href", "#/Instruments/violin");
-    			add_location(a4, file$c, 30, 14, 1011);
-    			add_location(li2, file$c, 29, 12, 992);
+    			add_location(a4, file$c, 30, 14, 1001);
+    			add_location(li2, file$c, 29, 12, 982);
     			attr_dev(a5, "class", "dropdown-item");
     			attr_dev(a5, "href", "#/Instruments/drums");
-    			add_location(a5, file$c, 33, 14, 1124);
-    			add_location(li3, file$c, 32, 12, 1105);
+    			add_location(a5, file$c, 33, 14, 1114);
+    			add_location(li3, file$c, 32, 12, 1095);
     			attr_dev(a6, "class", "dropdown-item");
     			attr_dev(a6, "href", "#/Instruments/synthesisers");
-    			add_location(a6, file$c, 38, 14, 1280);
-    			add_location(li4, file$c, 37, 12, 1261);
+    			add_location(a6, file$c, 38, 14, 1270);
+    			add_location(li4, file$c, 37, 12, 1251);
     			attr_dev(a7, "class", "dropdown-item");
     			attr_dev(a7, "href", "#/Instruments/recording_equipment");
-    			add_location(a7, file$c, 43, 14, 1437);
-    			add_location(li5, file$c, 42, 12, 1418);
+    			add_location(a7, file$c, 43, 14, 1427);
+    			add_location(li5, file$c, 42, 12, 1408);
     			attr_dev(ul0, "class", "dropdown-menu");
     			attr_dev(ul0, "aria-labelledby", "navbarDropdown");
-    			add_location(ul0, file$c, 22, 10, 695);
+    			add_location(ul0, file$c, 22, 10, 685);
     			attr_dev(li6, "class", "nav-item dropdown");
-    			add_location(li6, file$c, 13, 8, 449);
+    			add_location(li6, file$c, 13, 8, 439);
     			attr_dev(a8, "class", "nav-link");
     			attr_dev(a8, "href", "#/contact");
-    			add_location(a8, file$c, 50, 10, 1647);
+    			add_location(a8, file$c, 50, 10, 1637);
     			attr_dev(li7, "class", "nav-item");
-    			add_location(li7, file$c, 49, 8, 1615);
+    			add_location(li7, file$c, 49, 8, 1605);
     			attr_dev(i, "class", "bi bi-cart");
-    			add_location(i, file$c, 55, 14, 1822);
+    			add_location(i, file$c, 55, 14, 1812);
     			attr_dev(div0, "class", "cartAmount");
-    			add_location(div0, file$c, 56, 14, 1863);
+    			add_location(div0, file$c, 56, 14, 1853);
     			attr_dev(div1, "class", "cart");
-    			add_location(div1, file$c, 54, 12, 1789);
+    			add_location(div1, file$c, 54, 12, 1779);
     			attr_dev(a9, "class", "nav-link");
     			attr_dev(a9, "href", "#/shopping_cart");
-    			add_location(a9, file$c, 53, 10, 1733);
-    			add_location(li8, file$c, 52, 8, 1718);
+    			add_location(a9, file$c, 53, 10, 1723);
+    			add_location(li8, file$c, 52, 8, 1708);
     			attr_dev(ul1, "class", "navbar-nav ms-auto");
-    			add_location(ul1, file$c, 12, 6, 409);
+    			add_location(ul1, file$c, 12, 6, 399);
     			attr_dev(div2, "class", "collapse navbar-collapse");
     			attr_dev(div2, "id", "navbarNav");
-    			add_location(div2, file$c, 11, 4, 349);
+    			add_location(div2, file$c, 11, 4, 339);
     			attr_dev(div3, "class", "container");
     			add_location(div3, file$c, 1, 2, 70);
     			attr_dev(nav, "class", "navbar navbar-expand-lg navbar-dark bg-dark fixed-top");
@@ -17712,7 +17712,7 @@ var app = (function () {
       container.innerHTML = ""; // Clear existing content before appending new items
 
       // Fetching data from instrument json file
-      fetch('/FEWDproject/instruments.json')
+      fetch('/FEWDproject/public/instruments.json')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

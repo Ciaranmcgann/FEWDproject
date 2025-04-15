@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="/index.html">Home</a>
+    <a class="navbar-brand" href="/">Home</a>
     <button
       class="navbar-toggler"
       type="button"
