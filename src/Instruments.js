@@ -1,4 +1,8 @@
-{
+console.log("script.js loaded!"); // to see if script is connected to htmls
+
+
+// Step 1: Define the JSON data
+const data = {
   "instruments": [
     {
       "name": "Guitars",
@@ -72,9 +76,9 @@
       "description": "Classic Acoustic Guitars for folk and country music.",
       "image": "https://xmusic.ie/app/uploads/2022/12/cd11c.jpg",
       "price": "€349.99"
-    }
+    },
   ],
-  "drums": [
+    "drums": [
     {
       "name": "Pearl Export Drum Kit",
       "type": "Drums",
@@ -209,4 +213,17 @@
       "image": "https://www.cremona-violins.com/sv-175.jpg",
       "price": "€399.99"
     }
-  ]}
+  ],
+  
+  // (Continue with other categories: drums, pianos, etc.)
+};
+
+// Step 2: Save the data to localStorage as a string
+localStorage.setItem("musicStoreData", JSON.stringify(data));
+
+// Step 3: Retrieve and parse the data from localStorage when needed
+const retrievedData = JSON.parse(localStorage.getItem("musicStoreData"));
+
+// Example usage: Log the retrieved data
+console.log(retrievedData);
+

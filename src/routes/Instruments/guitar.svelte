@@ -12,8 +12,16 @@
   });
 
   function addToCart(guitar) {
-    // Example logic
-    console.log("Added to cart:", guitar);
+    // Add the instrument's essential data (name, price, id) to the cart
+    cart = [
+      ...cart,
+      {
+        id: guitar.id, // Assuming the instrument has an 'id' property
+        name: guitar.name,
+        price: guitar.price,
+      },
+    ];
+    localStorage.setItem("cart", JSON.stringify(cart)); // Save cart to localStorage
   }
 </script>
 
