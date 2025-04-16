@@ -12,6 +12,8 @@ Project Overview
 
 McGann's Music is a functional e-commerce-style website developed as part of my Front End Web Development course assignment. The website showcases a variety of musical instruments, allowing users to browse categories, view product details, and interact with a dynamic interface.
 
+Github pages link https://ciaranmcgann.github.io/FEWDproject/
+
 Features: 
 
 - Responsive Design: Built with Bootstrap 

@@ -817,6 +817,7 @@ var app = (function () {
     function create_fragment$c(ctx) {
     	let header;
     	let h1;
+    	let a;
     	let t1;
     	let p;
 
@@ -824,13 +825,16 @@ var app = (function () {
     		c: function create() {
     			header = element("header");
     			h1 = element("h1");
-    			h1.textContent = "McGann's Music Shop";
+    			a = element("a");
+    			a.textContent = "McGann's Music Shop";
     			t1 = space();
     			p = element("p");
     			p.textContent = "For all your music desires!!! testn";
+    			attr_dev(a, "href", "#/");
+    			add_location(a, file$b, 1, 19, 64);
     			attr_dev(h1, "class", "hero");
     			add_location(h1, file$b, 1, 2, 47);
-    			add_location(p, file$b, 2, 2, 91);
+    			add_location(p, file$b, 2, 2, 108);
     			attr_dev(header, "class", "text-white text-center py-5");
     			add_location(header, file$b, 0, 0, 0);
     		},
@@ -840,6 +844,7 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, header, anchor);
     			append_dev(header, h1);
+    			append_dev(h1, a);
     			append_dev(header, t1);
     			append_dev(header, p);
     		},
