@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from "svelte";
+
   let cart = [];
 
   onMount(() => {

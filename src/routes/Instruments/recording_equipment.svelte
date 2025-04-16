@@ -7,7 +7,7 @@
     const storedData = localStorage.getItem("musicStoreData");
     if (storedData) {
       const parsedData = JSON.parse(storedData);
-      recordingEquipmentt = parsedData.recordingEquipment || [];
+      recordingEquipment = parsedData.recordingEquipment || [];
     }
   });
 

@@ -1,19 +1,19 @@
 <script>
   import { onMount } from "svelte";
 
-  let violin = [];
+  let violins = [];
 
   onMount(() => {
     const storedData = localStorage.getItem("musicStoreData");
     if (storedData) {
       const parsedData = JSON.parse(storedData);
-      violin = parsedData.violin || [];
+      violins = parsedData.violins || [];
     }
   });
 
-  function addToCart(violin) {
+  function addToCart(violins) {
     // Example logic
-    console.log("Added to cart:", violin);
+    console.log("Added to cart:", violins);
   }
 </script>
 
@@ -22,17 +22,17 @@
   <section id="violins" class="container my-5">
     <h2 class="text-center">Violins</h2>
     <div class="row" id="violin-cards-container">
-      {#each violins as violin}
+      {#each violins as violins}
         <div class="col-md-4">
           <div class="card">
-            <img src={violin.image} class="card-img-top" alt={violin.name} />
+            <img src={violins.image} class="card-img-top" alt={violins.name} />
             <div class="card-body">
-              <h5 class="card-title">{violin.name}</h5>
-              <p class="card-text">{violin.description}</p>
-              <p class="card-price">Price: {violin.price}</p>
+              <h5 class="card-title">{violins.name}</h5>
+              <p class="card-text">{violins.description}</p>
+              <p class="card-price">Price: {violins.price}</p>
               <button
                 class="btn btn-primary add-to-cart"
-                on:click={() => addToCart(violin)}>Add to Cart</button
+                on:click={() => addToCart(violins)}>Add to Cart</button
               >
             </div>
           </div>
