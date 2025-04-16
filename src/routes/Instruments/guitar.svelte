@@ -22,6 +22,8 @@
 
     localStorage.setItem("cart", JSON.stringify(cart));
   }
+
+  alert(`${guitar.name} added to cart!`);
 </script>
 
 <main>

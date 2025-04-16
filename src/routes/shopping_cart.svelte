@@ -14,7 +14,7 @@
     return cart
       .reduce(
         (total, item) =>
-          total + parseFloat(item.price.replace("€", "").replace(",", "")),
+          total + parseFloat(item.price.replace("", "").replace(",", "")),
         0
       )
       .toFixed(2);
