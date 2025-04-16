@@ -1,9 +1,44 @@
+<script>
+  import { onMount } from "svelte";
+  let instruments = [];
+
+  onMount(() => {
+    const storedData = localStorage.getItem("musicStoreData");
+    if (storedData) {
+      const parsedData = JSON.parse(storedData);
+      instruments = parsedData.instruments || [];
+    }
+  });
+
+  function handleCardClick(target) {
+    window.location.href = target;
+  }
+</script>
+
 <main>
   <!-- Instruments -->
   <section id="instruments" class="container my-5">
-    <h2 class="text-center">Featured Instruments</h2>
-    <div class="row" id="instrument-cards-container">
-      <!-- Dynamic content will be inserted here -->
+    <div id="instrument-cards-container">
+      <div class="row">
+        {#each instruments as instrument}
+          <div
+            class="col-md-4 clickPage"
+            on:click={() => handleCardClick(instrument.target)}
+          >
+            <div class="card">
+              <img
+                src={instrument.image}
+                class="card-img-top"
+                alt={instrument.name}
+              />
+              <div class="card-body">
+                <h5 class="card-title">{instrument.name}</h5>
+                <p class="card-text">{instrument.description}</p>
+              </div>
+            </div>
+          </div>
+        {/each}
+      </div>
     </div>
   </section>
 

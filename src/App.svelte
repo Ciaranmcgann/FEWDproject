@@ -4,15 +4,6 @@
   import Footer from "./components/footer.svelte";
   import Router from "svelte-spa-router";
   import routes from "./routes.js";
-
-  import { onMount } from "svelte";
-  import { initCards } from "./script.js";
-
-  onMount(() => {
-    import("./script.js").then((module) => {
-      module.initCards(); // you expose a function like initCards from script.js
-    });
-  });
 </script>
 
 <main>

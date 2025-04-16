@@ -4,12 +4,17 @@
   let guitars = [];
 
   onMount(() => {
-    fetch("/FEWDproject/public/instruments.json")
-      .then((response) => response.json())
-      .then((data) => {
-        guitars = data;
-      });
+    const storedData = localStorage.getItem("musicStoreData");
+    if (storedData) {
+      const parsedData = JSON.parse(storedData);
+      guitars = parsedData.guitars || [];
+    }
   });
+
+  function addToCart(guitar) {
+    // Example logic
+    console.log("Added to cart:", guitar);
+  }
 </script>
 
 <main>
@@ -17,7 +22,22 @@
   <section id="guitars" class="container my-5">
     <h2 class="text-center">Guitars</h2>
     <div class="row" id="guitar-cards-container">
-      <!-- Dynamic content will be inserted here -->
+      {#each guitars as guitar}
+        <div class="col-md-4">
+          <div class="card">
+            <img src={guitar.image} class="card-img-top" alt={guitar.name} />
+            <div class="card-body">
+              <h5 class="card-title">{guitar.name}</h5>
+              <p class="card-text">{guitar.description}</p>
+              <p class="card-price">Price: {guitar.price}</p>
+              <button
+                class="btn btn-primary add-to-cart"
+                on:click={() => addToCart(guitar)}>Add to Cart</button
+              >
+            </div>
+          </div>
+        </div>
+      {/each}
     </div>
   </section>
 </main>

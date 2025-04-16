@@ -56,7 +56,7 @@ header p {
 #drums .row,
 #piano .row,
 #synthesisers .row,
-#recording-equipment .row 
+#recording-equipment .row,
 #violin .row {
   display: flex;
   justify-content: space-between; /* Distribute cards evenly */
@@ -68,7 +68,7 @@ header p {
 #drums .col-md-4,
 #piano .col-md-4,
 #synthesisers .col-md-4,
-#recording-equipment .col-md-4
+#recording-equipment .col-md-4,
 #violin .col-md-4 {
   display: flex;
   flex-direction: column; /* Ensure vertical stacking of content */

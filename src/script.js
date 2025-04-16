@@ -1,181 +1,92 @@
 console.log("script.js loaded!"); // to see if script is connected to htmls
 
-// clicks to new page for instrument divs on homepage 
 
-// Entry function that will initialize the cards based on hash or default to "all"
-export function initCards(type = "all") {
-  // Check for the container and initialize once it's available
-  waitForContainer("instrument-cards-container", () => {
-    // Initialize the cards based on the current hash
-    const hash = window.location.hash;
-    generateCardsFromHash(hash);  // Generate cards based on current hash
+// Step 1: Define the JSON data
+const data = {
+  "instruments": [
+    {
+      "name": "Guitars",
+      "description": "Electric/Acoustic Guitars",
+      "image": "https://images.guitarguitar.co.uk/cdn/small/160/753_gg_vintage23_lp1.jpg",
+      "target": "#/Instruments/guitar"
+    },
+    {
+      "name": "Piano",
+      "description": "Upright Pianos",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Steinway_Vienna_002.JPG",
+      "target": "#/Instruments/piano"
+    },
+    {
+      "name": "Drums",
+      "description": "Discover top-quality drum kits and percussion instruments.",
+      "image": "https://assets.xlnaudio.com/pages/addictive_drums/2.5/dream-kit-bg-with-transition-1352px-2x.jpg",
+      "target": "#/Instruments/drums"
+    },
+    {
+      "name": "Violin",
+      "description": "Acoustic Violins for classical and contemporary music.",
+      "image": "https://www.corilon.com/media/image/f8/e5/22/peter-hornsteiner-5377-1a_1890x1890.jpg",
+      "target": "#/Instruments/violin"
+    },
+    {
+      "name": "Synthesisers",
+      "description": "Explore analog and digital synthesisers for creating unique sounds.",
+      "image": "https://api.moogmusic.com/sites/default/files/styles/large_key/public/key_image/2022-11/Minimoog_Model_D_Website-5.jpg?itok=AEvGT6_I",
+      "target": "#/Instruments/synthesisers"
+    },
+    {
+      "name": "Recording Equipment",
+      "description": "High-quality microphones, mixers, and studio gear for professional recordings.",
+      "image": "https://sordan.ie/uploaded/photos/5435/1.jpg",
+      "target": "#/Instruments/recording_equipment"
+    }
+  ],
+  "guitars": [
+    {
+      "name": "Les Paul",
+      "type": "Guitar",
+      "description": "Classic Electric Guitar with a rich, warm tone.",
+      "image": "https://danvillemusic.com/cdn/shop/articles/gibson-les-paul-standard-featured-image1.webp?v=1711060996",
+      "price": "€1,499.99"
+    },
+    {
+      "name": "Telecaster",
+      "type": "Guitar",
+      "description": "Electric Guitar with a bright, cutting sound.",
+      "image": "https://r2.gear4music.com/media/103/1034459/600/preview.jpg",
+      "price": "€1,199.99"
+    },
+    {
+      "name": "Fender Stratocaster",
+      "type": "Guitar",
+      "description": "Popular Electric Guitar known for its bright, sharp tones.",
+      "image": "https://images.musicstore.de/images/1280/fender-american-vintage-ii-1973-stratocaster-mn-lake-placid-blue_1_GIT0059210-000.jpg",
+      "price": "€1,799.99"
+    },
+    {
+      "name": "Gibson SG",
+      "type": "Guitar",
+      "description": "Electric Guitar with a powerful sound and a classic rock vibe.",
+      "image": "https://r2.gear4music.com/media/60/604503/600/preview.jpg",
+      "price": "€1,099.99"
+    },
+    {
+      "name": "Craftine CD11C Dreadnought Acoustic Guitar",
+      "type": "Guitar",
+      "description": "Classic Acoustic Guitars for folk and country music.",
+      "image": "https://xmusic.ie/app/uploads/2022/12/cd11c.jpg",
+      "price": "€349.99"
+    }
+  ],
+  // (Continue with other categories: drums, pianos, etc.)
+};
 
-    // Listen for changes in the hash and update cards accordingly
-    setupHashChangeListener();
-  });
-}
+// Step 2: Save the data to localStorage as a string
+localStorage.setItem("musicStoreData", JSON.stringify(data));
 
-// Wait until the container element is available in the DOM before proceeding
-function waitForContainer(id, callback) {
-  const el = document.getElementById(id);
-  if (el) {
-    callback();
-  } else {
-    requestAnimationFrame(() => waitForContainer(id, callback));  // Retry until the element is found
-  }
-}
+// Step 3: Retrieve and parse the data from localStorage when needed
+const retrievedData = JSON.parse(localStorage.getItem("musicStoreData"));
 
-// Generate cards based on the current URL hash
-function generateCardsFromHash(hash) {
-  if (hash.includes("/Instruments/guitar")) {
-    generateInstrumentCards("guitar");
-  } else if (hash.includes("/Instruments/drums")) {
-    generateInstrumentCards("drums");
-  } else if (hash.includes("/Instruments/piano")) {
-    generateInstrumentCards("piano");
-  } else if (hash.includes("/Instruments/synthesisers")) {
-    generateInstrumentCards("synthesisers");
-  } else if (hash.includes("/Instruments/recording_equipment")) {
-    generateInstrumentCards("recordingEquipment");
-  } else if (hash.includes("/Instruments/violin")) {
-    generateInstrumentCards("violin");
-  } else {
-    generateInstrumentCards("all");  // Default to "all" if no match
-  }
-}
-
-// Setup event listener for hash changes (for navigating between different categories)
-function setupHashChangeListener() {
-  window.addEventListener("hashchange", () => {
-    const hash = window.location.hash;
-    generateCardsFromHash(hash);  // Generate cards based on the new hash
-  });
-}
-
-// Generate the instrument cards based on the type
-function generateInstrumentCards(type = "all") {
-  let container;
-  switch (type) {
-    case "guitar":
-      container = document.getElementById("guitar-cards-container");
-      break;
-    case "drums":
-      container = document.getElementById("drum-cards-container");
-      break;
-    case "piano":
-      container = document.getElementById("piano-cards-container");
-      break;
-    case "synthesisers":
-      container = document.getElementById("synthesisers-cards-container");
-      break;
-    case "recordingEquipment":
-      container = document.getElementById("recording-equipment-cards-container");
-      break;
-    case "violin":
-      container = document.getElementById("violin-cards-container");
-      break;
-    default:
-      container = document.getElementById("instrument-cards-container");
-  }
-
-  if (!container) {
-    console.error(`${type} cards container not found!`);
-    return;
-  }
-
-  container.innerHTML = "";  // Clear any existing cards
-
-  // Fetch data from the JSON file
-  fetch('/FEWDproject/public/instruments.json')
-    .then(response => {
-      if (!response.ok) throw new Error('Network response was not ok');
-      return response.json();
-    })
-    .then(jsonData => {
-      let data;
-      switch (type) {
-        case "guitar": data = jsonData.guitars; break;
-        case "drums": data = jsonData.drums; break;
-        case "piano": data = jsonData.pianos; break;
-        case "synthesisers": data = jsonData.synthesisers; break;
-        case "recordingEquipment": data = jsonData.recordingEquipment; break;
-        case "violin": data = jsonData.violins; break;
-        default: data = jsonData.instruments;
-      }
-
-      if (!Array.isArray(data)) {
-        console.error('Invalid or empty data received.');
-        return;
-      }
-
-      // Create and append cards for each instrument
-      data.forEach(instrument => {
-        const colDiv = document.createElement("div");
-        colDiv.classList.add("col-md-4");
-
-        const cardDiv = document.createElement("div");
-        cardDiv.classList.add("card");
-
-        if (type === "all") {
-          cardDiv.classList.add("clickPage");
-          cardDiv.setAttribute("data-target", instrument.target);
-        }
-
-        const imgElement = document.createElement("img");
-        imgElement.src = instrument.image;
-        imgElement.classList.add("card-img-top");
-        imgElement.alt = instrument.name;
-
-        const cardBodyDiv = document.createElement("div");
-        cardBodyDiv.classList.add("card-body");
-
-        const titleElement = document.createElement("h5");
-        titleElement.classList.add("card-title");
-        titleElement.innerText = instrument.name;
-
-        const textElement = document.createElement("p");
-        textElement.classList.add("card-text");
-        textElement.innerText = instrument.description;
-
-        cardBodyDiv.appendChild(titleElement);
-        cardBodyDiv.appendChild(textElement);
-
-        if (type !== "all") {
-          const priceElement = document.createElement("p");
-          priceElement.classList.add("card-price");
-          priceElement.innerText = `Price: ${instrument.price}`;
-
-          const addToCartButton = document.createElement("button");
-          addToCartButton.classList.add("btn", "btn-primary", "add-to-cart");
-          addToCartButton.innerText = "Add to Cart";
-
-          cardBodyDiv.appendChild(priceElement);
-          cardBodyDiv.appendChild(addToCartButton);
-        }
-
-        cardDiv.appendChild(imgElement);
-        cardDiv.appendChild(cardBodyDiv);
-        colDiv.appendChild(cardDiv);
-        container.appendChild(colDiv);
-      });
-
-      setupClickListeners();  // Re-add click listeners after content is loaded
-    })
-    .catch(error => {
-      console.error('Error loading the JSON data:', error);
-    });
-}
-
-// Set up click listeners for dynamically generated cards
-function setupClickListeners() {
-  document.querySelectorAll(".clickPage").forEach(div => {
-    div.addEventListener("click", function () {
-      const targetPage = div.getAttribute("data-target");
-      if (targetPage) {
-        window.location.href = targetPage;
-      }
-    });
-  });
-}
-
+// Example usage: Log the retrieved data
+console.log(retrievedData);
 
