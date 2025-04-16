@@ -14,7 +14,7 @@
     return cart
       .reduce(
         (total, item) =>
-          total + parseFloat(item.price.replace("", "").replace(",", "")),
+          total + parseFloat(item.price.replace("€", "").replace(",", "")),
         0
       )
       .toFixed(2);
@@ -85,7 +85,7 @@
               <li
                 class="list-group-item d-flex justify-content-between align-items-center"
               >
-                <div>{item.name} - €{item.price}</div>
+                <div>{item.name} - {item.price}</div>
                 <button
                   class="btn btn-danger btn-sm"
                   on:click={() => removeFromCart(index)}>Remove</button
