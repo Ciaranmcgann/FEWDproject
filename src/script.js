@@ -151,7 +151,10 @@ document.addEventListener("click", function(event) {
 
 // Call the function to generate the instrument cards on page load (check the current page)
 const hash = window.location.hash;
-console.log("Hash:", hash);
+
+window.addEventListener("hashchange", () => { // url change forces the script to run again to generate new cards
+  const hash = window.location.hash;
+
 
 if (hash.includes("/Instruments/guitar")) {
   generateInstrumentCards("guitar");
@@ -168,5 +171,5 @@ if (hash.includes("/Instruments/guitar")) {
 } else {
   generateInstrumentCards("all");
 }
-
+});
 });
