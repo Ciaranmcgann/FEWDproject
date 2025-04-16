@@ -40,7 +40,7 @@
               <p class="card-price">Price: {guitars.price}</p>
               <button
                 class="btn btn-primary add-to-cart"
-                on:click={() => addToCart(guitas)}>Add to Cart</button
+                on:click={() => addToCart(guitars)}>Add to Cart</button
               >
             </div>
           </div>
