@@ -174,7 +174,7 @@ const data = {
       "type": "Recording Equipment",
       "description": "USB audio interface with two Scarlett microphone inputs.",
       "image": "https://focusrite.com/img/scarlett-2i2.jpg",
-      "price": "€179.99"
+      "price": "€99.99"
     },
     {
       "name": "Audio-Technica ATH-M50X Headphones",
