@@ -11,9 +11,18 @@
     }
   });
 
+  // add to cart function
   function addToCart(pianos) {
-    // Example logic
-    console.log("Added to cart:", pianos);
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push({
+      id: pianos.id,
+      name: pianos.name,
+      price: pianos.price,
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(`${pianos.name} added to cart!`);
   }
 </script>
 

@@ -10,10 +10,19 @@
       synthesisers = parsedData.synthesisers || [];
     }
   });
+  // add to cart
 
   function addToCart(synthesisers) {
-    // Example logic
-    console.log("Added to cart:", synthesisers);
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push({
+      id: synthesisers.id,
+      name: synthesisers.name,
+      price: synthesisers.price,
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(`${synthesisers.name} added to cart!`);
   }
 </script>
 

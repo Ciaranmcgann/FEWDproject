@@ -11,6 +11,8 @@
     }
   });
 
+  // add to cart
+
   function addToCart(guitars) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 

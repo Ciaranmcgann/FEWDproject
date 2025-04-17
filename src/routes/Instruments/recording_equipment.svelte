@@ -11,9 +11,19 @@
     }
   });
 
+  // add to cart
+
   function addToCart(recordingEquipment) {
-    // Example logic
-    console.log("Added to cart:", recordingEquipment);
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push({
+      id: recordingEquipment.id,
+      name: recordingEquipment.name,
+      price: recordingEquipment.price,
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(`${recordingEquipment.name} added to cart!`);
   }
 </script>
 
@@ -22,18 +32,18 @@
   <section id="recording-equipment" class="container my-5">
     <h2 class="text-center">Recording Equipment</h2>
     <div class="row" id="recording-cards-container">
-      {#each recordingEquipment as recordingEquipmentt}
+      {#each recordingEquipment as recordingEquipment}
         <div class="col-md-4">
           <div class="card">
             <img
               src={recordingEquipment.image}
               class="card-img-top"
-              alt={recordingEquipmentt.name}
+              alt={recordingEquipment.name}
             />
             <div class="card-body">
               <h5 class="card-title">{recordingEquipment.name}</h5>
               <p class="card-text">{recordingEquipment.description}</p>
-              <p class="card-price">Price: {recordingEquipmentt.price}</p>
+              <p class="card-price">Price: {recordingEquipment.price}</p>
               <button
                 class="btn btn-primary add-to-cart"
                 on:click={() => addToCart(recordingEquipment)}

@@ -54,7 +54,6 @@
           <a class="nav-link" href="#/shopping_cart">
             <div class="cart">
               <i class="bi bi-cart"></i>
-              <div class="cartAmount">0</div>
             </div>
           </a>
         </li>

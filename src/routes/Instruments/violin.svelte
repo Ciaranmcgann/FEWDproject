@@ -12,8 +12,16 @@
   });
 
   function addToCart(violins) {
-    // Example logic
-    console.log("Added to cart:", violins);
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push({
+      id: violins.id,
+      name: violins.name,
+      price: violins.price,
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(`${violins.name} added to cart!`);
   }
 </script>
 

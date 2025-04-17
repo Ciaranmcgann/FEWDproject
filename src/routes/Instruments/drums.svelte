@@ -11,9 +11,18 @@
     }
   });
 
+  // add to cart function
   function addToCart(drums) {
-    // Example logic
-    console.log("Added to cart:", drums);
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push({
+      id: drums.id,
+      name: drums.name,
+      price: drums.price,
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(`${drums.name} added to cart!`);
   }
 </script>
 
