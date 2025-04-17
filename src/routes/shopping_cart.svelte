@@ -59,13 +59,13 @@
                   class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0"
                 >
                   Products
-                  <span>€{formatPrice(total)}</span>
+                  <span>{formatPrice(total)}</span>
                 </li>
                 <li
                   class="list-group-item d-flex justify-content-between align-items-center px-0"
                 >
                   Shipping
-                  <span>€{formatPrice(shipping)}</span>
+                  <span>{formatPrice(shipping)}</span>
                 </li>
                 <li
                   class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3"
@@ -77,7 +77,7 @@
                     </strong>
                   </div>
                   <span
-                    ><strong>€{formatPrice(Number(total) + shipping)}</strong
+                    ><strong>{formatPrice(Number(total) + shipping)}</strong
                     ></span
                   >
                 </li>
