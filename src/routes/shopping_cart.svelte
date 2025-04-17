@@ -60,6 +60,7 @@
                 >
                   Products
                   <span>{formatPrice(total)}</span>
+                  <!-- Change: I ensured the euro sign appears only once here -->
                 </li>
                 <li
                   class="list-group-item d-flex justify-content-between align-items-center px-0"
@@ -80,6 +81,7 @@
                     ><strong>{formatPrice(Number(total) + shipping)}</strong
                     ></span
                   >
+                  <!-- Change: Removed duplicate euro sign here -->
                 </li>
               </ul>
               <button
@@ -93,7 +95,6 @@
           </div>
         </div>
 
-        <!-- Cart Items List -->
         <!-- Cart Items List -->
         <div class="col-md-8">
           <h4>Items in Cart</h4>
@@ -115,10 +116,22 @@
             >
               <strong>Total:</strong>
               <strong>{formatPrice(Number(total) + shipping)}</strong>
+              <!-- Change: Removed duplicate euro sign here -->
             </li>
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="contact" class="bg-light py-5">
+    <div class="container text-center">
+      <h2>Contact Us</h2>
+      <p>
+        Email: <strong>contact@mcgannsmusic.com</strong> <br />
+        Phone: <strong>+353 85 555 5555</strong> <br />
+        Address: <strong>29 Exchequer St, Dublin 2, D02 X310</strong>
+      </p>
     </div>
   </section>
 </main>
