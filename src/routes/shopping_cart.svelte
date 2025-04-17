@@ -92,7 +92,7 @@
               <button
                 type="button"
                 class="btn btn-primary btn-lg btn-block"
-                on:click={handleCheckout}
+                on:click={() => handleCheckout(total)}
               >
                 Go to checkout
               </button>
