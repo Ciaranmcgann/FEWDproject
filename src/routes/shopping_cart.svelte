@@ -31,9 +31,14 @@
 
   // Set shipping cost based on total
   $: shipping = total >= 100 ? 0 : 15; // Free shipping for orders over 100 EUR, else 15 EUR
+  $: shipping = total === 0 ? 0 : 0; // so there is no shipping fee for nothing
 
-  function handleCheckout() {
-    alert("Proceeding to checkout...");
+  function handleCheckout(total) {
+    if (total === 0) {
+      alert("Error: Your cart is empty.");
+    } else {
+      alert("Proceeding to checkout...");
+    }
   }
 
   function removeFromCart(index) {
