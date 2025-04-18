@@ -7,7 +7,7 @@ const data = {
     {
       "name": "Guitars",
       "description": "Electric/Acoustic Guitars",
-      "image": "FEWDproject/public/images/les-paul2.jpeg", // local stored image instead of link
+      "image": "FEWDproject/public/images/les_paul2.jpeg", // local stored image instead of link
       "target": "#/Instruments/guitar"
     },
     {
@@ -46,7 +46,7 @@ const data = {
       "name": "Les Paul",
       "type": "Guitar",
       "description": "Classic Electric Guitar with a rich, warm tone.",
-      "image": "/FEWDproject/public/images/les-paul2.jpeg", // local stored image instead of link
+      "image": "/FEWDproject/public/images/les_paul2.jpeg", // local stored image instead of link
       "price": "€1,499.99"
     },
     {
@@ -113,21 +113,21 @@ const data = {
       "name": "Yamaha U1",
       "type": "Piano",
       "description": "Popular upright piano for both beginners and professionals.",
-      "image": "https://www.yamaha.com/images/yamaha-u1-piano.jpg",
+      "image": "https://images.musicstore.de/images/0960/yamaha-u1-sh-pe-121-cm-incl-mute-switch_1_PIA0001841-000.jpg",
       "price": "€7,499.99"
     },
     {
       "name": "Kawai K-300",
       "type": "Piano",
       "description": "Upright Piano with a warm, powerful tone.",
-      "image": "https://www.kawai-global.com/images/k300.jpg",
+      "image": "https://www.chuppspianos.com/wp-content/uploads/2017/08/Kawai-K-300-Professional-Upright-Piano-Ebony-Chupps-Pianos-1024x683.jpg",
       "price": "€5,999.99"
     },
     {
       "name": "Casio Privia PX-160",
       "type": "Piano",
       "description": "Digital piano with realistic sound and touch.",
-      "image": "https://www.casio-europe.com/privia-px160.jpg",
+      "image": "https://r2.gear4music.com/media/14/148610/600/preview.jpg",
       "price": "€499.99"
     }
   ],
