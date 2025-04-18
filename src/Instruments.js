@@ -150,7 +150,7 @@ const data = {
       "name": "Roland JUNO-DS61",
       "type": "Synthesiser",
       "description": "Portable synthesizer with a wide range of sounds.",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjEyQG2oC2_dhlWLKYn2Un3o8DjxBmeLCFhg&s",
+      "image": "https://www.iconsshop.co.za/wp-content/uploads/2023/09/products-DS612_0.75x.jpg",
       "price": "€649.00"
     }
   ],
@@ -159,28 +159,28 @@ const data = {
       "name": "Shure SM7B Microphone",
       "type": "Recording Equipment",
       "description": "Dynamic cardioid microphone for vocals and instruments.",
-      "image": "https://www.shure.com/en-US/products/microphones/sm7b",
+      "image": "https://sc1.musik-produktiv.com/pic-010014469xl/shure-sm7b.jpg",
       "price": "€399.99"
     },
     {
       "name": "Focusrite Scarlett 2i2 Audio Interface",
       "type": "Recording Equipment",
       "description": "USB audio interface with two Scarlett microphone inputs.",
-      "image": "https://focusrite.com/img/scarlett-2i2.jpg",
+      "image": "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_46/467950/14226632_800.jpg",
       "price": "€99.99"
     },
     {
       "name": "Audio-Technica ATH-M50X Headphones",
       "type": "Recording Equipment",
       "description": "Professional over-ear headphones for monitoring and mixing.",
-      "image": "https://www.audio-technica.com/en-us/ath-m50x",
+      "image": "https://r2.gear4music.com/media/16/165126/600/preview.jpg",
       "price": "€169.99"
     },
     {
       "name": "KRK Rokit 5 G4 Studio Monitors",
       "type": "Recording Equipment",
       "description": "Active studio monitor speakers with precise sound.",
-      "image": "https://www.krksys.com/product/rokit-5-g4/",
+      "image": "https://support.musicgateway.com/wp-content/uploads/2021/06/KRK-Rokit-5-G4.jpg",
       "price": "€179.99"
     }
   ],
@@ -189,21 +189,21 @@ const data = {
       "name": "Yamaha V5 Series",
       "type": "Violin",
       "description": "Ideal for students, this violin offers excellent playability and tone at an affordable price.",
-      "image": "https://www.yamaha.com/violin-v5.jpg",
+      "image": "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_17/172522/14389014_800.jpg",
       "price": "€599.99"
     },
     {
       "name": "Fender FV-1 Violin",
       "type": "Violin",
       "description": "Electric violin with a sleek design and great sound for modern performances.",
-      "image": "https://www.fender.com/electric-violin.jpg",
+      "image": "https://rvb-img.reverb.com/image/upload/s--A_S9yjQy--/a_exif,c_limit,e_unsharp_mask:80,f_auto,fl_progressive,g_south,h_620,q_90,w_620/v1379362371/mxoumpgfthoiqchurlvw.jpg",
       "price": "€899.99"
     },
     {
       "name": "Cremona SV-175",
       "type": "Violin",
       "description": "High-quality student violin with a rich, full tone and easy playability.",
-      "image": "https://www.cremona-violins.com/sv-175.jpg",
+      "image": "https://clarkesmusiccompany.com/image/cache/catalog/product-4828-550x550.jpg",
       "price": "€399.99"
     }
   ],
