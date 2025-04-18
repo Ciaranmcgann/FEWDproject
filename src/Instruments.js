@@ -7,7 +7,7 @@ const data = {
     {
       "name": "Guitars",
       "description": "Electric/Acoustic Guitars",
-      "image": "https://images.guitarguitar.co.uk/cdn/small/160/753_gg_vintage23_lp1.jpg",
+      "image": "/FEWDproject/public/images/les-paul2.jpeg", // local stored image instead of link
       "target": "#/Instruments/guitar"
     },
     {
@@ -46,7 +46,7 @@ const data = {
       "name": "Les Paul",
       "type": "Guitar",
       "description": "Classic Electric Guitar with a rich, warm tone.",
-      "image": "https://danvillemusic.com/cdn/shop/articles/gibson-les-paul-standard-featured-image1.webp?v=1711060996",
+      "image": "/FEWDproject/public/images/les-paul2.jpeg", // local stored image instead of link
       "price": "€1,499.99"
     },
     {
@@ -69,13 +69,6 @@ const data = {
       "description": "Electric Guitar with a powerful sound and a classic rock vibe.",
       "image": "https://r2.gear4music.com/media/60/604503/600/preview.jpg",
       "price": "€1,099.99"
-    },
-    {
-      "name": "Craftine CD11C Dreadnought Acoustic Guitar",
-      "type": "Guitar",
-      "description": "Classic Acoustic Guitars for folk and country music.",
-      "image": "https://xmusic.ie/app/uploads/2022/12/cd11c.jpg",
-      "price": "€349.99"
     },
   ],
     "drums": [
