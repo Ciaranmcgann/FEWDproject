@@ -47,7 +47,7 @@ const data = {
       "type": "Guitar",
       "description": "Classic Electric Guitar with a rich, warm tone.",
       "image": "/FEWDproject/public/images/les_paul2.jpeg", // local stored image instead of link
-      "price": "2,799.99" // changed price
+      "price": "€2,799.99" // changed price
     },
     {
       "name": "Telecaster",
