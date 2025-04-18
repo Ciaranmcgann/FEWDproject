@@ -29,12 +29,18 @@
     }, 0)
     .toFixed(2);
 
-  // Set shipping cost based on total
-  $: shipping = total >= 100 ? 0 : 15; // Free shipping for orders over 100 EUR, else 15 EUR
-  $: shipping = total === 0 ? 0 : 0; // so there is no shipping fee for nothing
+  $: {
+    if (total === 0) {
+      shipping = 0;
+    } else if (total >= 100) {
+      shipping = 0;
+    } else {
+      shipping = 15;
+    }
+  }
 
   function handleCheckout(total) {
-    if (total === 0) {
+    if (total == 0) {
       alert("Error: Your cart is empty.");
     } else {
       alert("Proceeding to checkout...");
