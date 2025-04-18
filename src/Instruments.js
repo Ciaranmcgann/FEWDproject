@@ -7,7 +7,7 @@ const data = {
     {
       "name": "Guitars",
       "description": "Electric/Acoustic Guitars",
-      "image": "FEWDproject/public/images/les_paul2.jpeg", // local stored image instead of link
+      "image": "/FEWDproject/public/images/les_paul2.jpeg", // local stored image instead of link
       "target": "#/Instruments/guitar"
     },
     {
