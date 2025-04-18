@@ -87,17 +87,3 @@
     </div>
   </section>
 </main>
-
-<style>
-  /* Ensure the map container has a proper height */
-  .map-container {
-    /* Adjust the height of the map container */
-    height: 400px; /* Change this value as needed */
-    width: 100%; /* Responsive map */
-  }
-
-  /* Optional: Add margin to the contact form */
-  .container.contact-form {
-    margin-top: 30px;
-  }
-</style>
