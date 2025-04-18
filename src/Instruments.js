@@ -143,14 +143,14 @@ const data = {
       "name": "Korg Minilogue XD",
       "type": "Synthesiser",
       "description": "Polyphonic analog synthesizer with advanced features.",
-      "image": "https://www.korg.com/uk/products/synthesizers/minilogue_xd/images/front.jpg",
+      "image": "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_47/478597/14923795_800.jpg",
       "price": "€649.99"
     },
     {
       "name": "Roland JUNO-DS61",
       "type": "Synthesiser",
       "description": "Portable synthesizer with a wide range of sounds.",
-      "image": "https://www.roland.com/us/products/juno_ds61/",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjEyQG2oC2_dhlWLKYn2Un3o8DjxBmeLCFhg&s",
       "price": "€649.00"
     }
   ],
