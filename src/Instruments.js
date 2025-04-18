@@ -97,7 +97,7 @@ const data = {
       "name": "DW Performance Series",
       "type": "Drums",
       "description": "High-end drums known for their quality sound.",
-      "image": "https://www.dwdrums.com/images/performance-series.jpg",
+      "image": "https://drumfactory.com.au/cdn/shop/products/ScreenShot2022-09-29at2.24.22pm.png?v=1664432339",
       "price": "€1,999.99"
     }
   ],
