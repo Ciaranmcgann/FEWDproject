@@ -7,7 +7,7 @@ const data = {
     {
       "name": "Guitars",
       "description": "Electric/Acoustic Guitars",
-      "image": "/FEWDproject/public/images/les-paul2.jpeg", // local stored image instead of link
+      "image": "FEWDproject/public/images/les-paul2.jpeg", // local stored image instead of link
       "target": "#/Instruments/guitar"
     },
     {
@@ -76,21 +76,21 @@ const data = {
       "name": "Pearl Export Drum Kit",
       "type": "Drums",
       "description": "Complete 5-piece drum kit with hardware and cymbals.",
-      "image": "https://www.pearl-drums.com/wp-content/uploads/2022/04/export-drum-set.jpg",
+      "image": "https://media.sweetwater.com/m/products/image/b3c214b3c3eykiECiWtmPv3L9B142T46axxO6I54.jpg?quality=82&width=750&ha=b3c214b3c3a9566d",
       "price": "€699.99"
     },
     {
       "name": "Tama Imperialstar Drum Kit",
       "type": "Drums",
       "description": "Affordable, professional-grade drum set.",
-      "image": "https://www.tama.com/media/imperialstar-kit-hero.jpg",
+      "image": "https://www.samash.com/media/catalog/product/t/i/tie52ccpm.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=1200&width=1200&canvas=1200:1200",
       "price": "€799.99"
     },
     {
       "name": "Ludwig Breakbeats",
       "type": "Drums",
       "description": "Compact drum kit for urban and studio settings.",
-      "image": "https://www.ludwig-drums.com/media/breakbeats.jpg",
+      "image": "https://m.media-amazon.com/images/I/71da5qMfRZL._AC_UF894,1000_QL80_.jpg",
       "price": "€599.99"
     },
     {
