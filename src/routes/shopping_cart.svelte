@@ -20,14 +20,16 @@
   }
 
   // Calculate total only when cart changes
-  $: total = cart
-    .reduce((sum, item) => {
-      const cleanPrice = Number(
-        item.price.replace(/[€]/g, "").replace(/,/g, "")
-      );
-      return sum + (isNaN(cleanPrice) ? 0 : cleanPrice);
-    }, 0)
-    .toFixed(2);
+  $: total = parseFloat(
+    cart
+      .reduce((sum, item) => {
+        const cleanPrice = Number(
+          item.price.replace(/[€]/g, "").replace(/,/g, "")
+        );
+        return sum + (isNaN(cleanPrice) ? 0 : cleanPrice);
+      }, 0)
+      .toFixed(2)
+  );
 
   $: {
     if (total === 0) {
