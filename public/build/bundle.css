@@ -28,7 +28,7 @@ header p {
 #instruments .row,
 #guitars .row,
 #drums .row,
-#piano .row,
+#pianos .row,
 #synthesisers .row,
 #recording-equipment .row,
 #violin .row {
@@ -40,7 +40,7 @@ header p {
 #instruments .col-md-4,
 #guitars .col-md-4,
 #drums .col-md-4,
-#piano .col-md-4,
+#pianos .col-md-4,
 #synthesisers .col-md-4,
 #recording-equipment .col-md-4,
 #violin .col-md-4 {
@@ -54,7 +54,7 @@ header p {
   display: flex;
   flex-direction: column; /* Ensures the card content stretches to fill space */
   height: 100%; /* Ensure each card takes up full height */
-  background-color: #f8f9fa; /* Optional: Adjust the background color of the card */
+  background-color: #f8f9fa; 
 }
 
 /* Ensure uniform image size */
@@ -85,7 +85,7 @@ header p {
 .dropdown-menu-container {
   display: none; /* Initially hidden */
   position: absolute;
-  top: 60px; /* Adjust this depending on your navbar height */
+  top: 60px; 
   left: 0;
   z-index: 999; /* Make sure it's above other content */
   background-color: #343a40; /* Match the navbar background */

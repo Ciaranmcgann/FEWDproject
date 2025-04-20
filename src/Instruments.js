@@ -13,13 +13,13 @@ const data = {
     {
       "name": "Piano",
       "description": "Upright Pianos",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Steinway_Vienna_002.JPG",
+      "image": "https://eu.steinway.com/fileadmin/user_upload/Fluegel_B_Black_03.jpg",
       "target": "#/Instruments/piano"
     },
     {
       "name": "Drums",
       "description": "Discover top-quality drum kits and percussion instruments.",
-      "image": "https://assets.xlnaudio.com/pages/addictive_drums/2.5/dream-kit-bg-with-transition-1352px-2x.jpg",
+      "image": "https://r2.gear4music.com/media/113/1132674/600/preview.jpg",
       "target": "#/Instruments/drums"
     },
     {
@@ -31,7 +31,7 @@ const data = {
     {
       "name": "Synthesisers",
       "description": "Explore analog and digital synthesisers for creating unique sounds.",
-      "image": "https://api.moogmusic.com/sites/default/files/styles/large_key/public/key_image/2022-11/Minimoog_Model_D_Website-5.jpg?itok=AEvGT6_I",
+      "image": "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_55/553838/18348199_800.jpg",
       "target": "#/Instruments/synthesisers"
     },
     {
@@ -106,7 +106,7 @@ const data = {
       "name": "Steinway & Sons Model B",
       "type": "Piano",
       "description": "Grand Piano with a rich, full-bodied sound.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Steinway_Vienna_002.JPG",
+      "image": "https://eu.steinway.com/fileadmin/user_upload/Fluegel_B_Black_03.jpg",
       "price": "€85,000.00"
     },
     {
@@ -136,7 +136,7 @@ const data = {
       "name": "Moog Minimoog Model D",
       "type": "Synthesiser",
       "description": "Classic analog synthesizer with rich, full tones.",
-      "image": "https://api.moogmusic.com/sites/default/files/styles/large_key/public/key_image/2022-11/Minimoog_Model_D_Website-5.jpg?itok=AEvGT6_I",
+      "image": "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_55/553838/18348199_800.jpg",
       "price": "€3,299.99"
     },
     {
