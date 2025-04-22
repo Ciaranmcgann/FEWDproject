@@ -17,11 +17,13 @@ Github pages link https://ciaranmcgann.github.io/FEWDproject/
 **Clone the repository:**
 
 git clone https://github.com/ciaranmcgann/FEWDproject.git
+
 cd FEWDproject
 
 **Run Svelte:**
 
 npm install
+
 npm run dev
 
 
