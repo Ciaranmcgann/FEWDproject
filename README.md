@@ -8,13 +8,25 @@ Student Name: Ciaran McGann
 Instructor: Gilberto Santos 
 Submission Date: 22/04/2025
 
-Project Overview
+**Project Overview**
 
 McGann's Music is a functional e-commerce-style website developed as part of my Front End Web Development course assignment. The website showcases a variety of musical instruments, allowing users to browse categories, view product details, and interact with a dynamic interface.
 
 Github pages link https://ciaranmcgann.github.io/FEWDproject/
 
-Features: 
+**Clone the repository:**
+
+git clone https://github.com/ciaranmcgann/FEWDproject.git
+cd FEWDproject
+
+**Run Svelte:**
+
+npm install
+npm run dev
+
+
+
+**Features:**
 
 - Responsive Design: Built with Bootstrap 
 
@@ -26,7 +38,7 @@ Features:
 
   
 
-Technologies Used:
+**Technologies Used:**
 
 - HTML: Website structure and content.
 
