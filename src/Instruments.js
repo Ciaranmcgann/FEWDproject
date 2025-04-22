@@ -1,7 +1,7 @@
-console.log("script.js loaded!"); // to see if script is connected to htmls
+console.log("script.js loaded!"); // to see js is connecting 
 
 
-// Step 1: Define the JSON data
+// JSON data
 const data = {
   "instruments": [
     {
@@ -208,16 +208,16 @@ const data = {
     }
   ],
   
-  // (Continue with other categories: drums, pianos, etc.)
+
 };
 
-// Step 2: Save the data to localStorage as a string
+// Saves the data to localStorage as a string
 localStorage.setItem("musicStoreData", JSON.stringify(data));
 
-// Step 3: Retrieve and parse the data from localStorage when needed
+// Retrieves and parse the data from localStorage when needed
 const retrievedData = JSON.parse(localStorage.getItem("musicStoreData"));
 
-// Example usage: Log the retrieved data
+// Logs the retrieved data
 console.log(retrievedData);
 
 
